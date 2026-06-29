@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Controle Financeiro Premium — Organize sua vida financeira em minutos</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232E7D32'/%3E%3Crect x='24' y='54' width='13' height='22' rx='3' fill='%23ffffff'/%3E%3Crect x='44' y='40' width='13' height='36' rx='3' fill='%23ffffff'/%3E%3Crect x='64' y='28' width='13' height='48' rx='3' fill='%2393C47D'/%3E%3C/svg%3E" />
 <meta name="description" content="A planilha de controle financeiro pessoal no Google Sheets que organiza seu dinheiro automaticamente. Saiba quanto sobra, pare de se perder nas contas e realize suas metas." />
 
 <!-- ============================================================= -->
@@ -30,6 +31,8 @@
   /* faixa rolante */
   @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
   .marquee { animation: marquee 22s linear infinite; }
+  /* respiro p/ o botao fixo de compra nao cobrir o rodape no celular */
+  @media (max-width:767px){ body{ padding-bottom:5.5rem; } }
 </style>
 </head>
 
@@ -97,7 +100,7 @@
         </a>
         <div class="text-sm">
           <div class="font-bold text-slate-900">R$ 47,90 <span class="text-slate-400 line-through font-normal">R$ 97,00</span></div>
-          <div class="text-slate-500">ou 12x na Hotmart</div>
+          <div class="text-slate-500">ou em 4x na Hotmart</div>
         </div>
       </div>
 
@@ -464,7 +467,7 @@
         </div>
         <!-- selo -->
         <div class="absolute -top-3 -right-3 rotate-6 rounded-full bg-gold text-forest text-xs font-extrabold px-3 py-2 shadow-soft">
-          NOVO 🚀
+          EM BREVE
         </div>
       </div>
     </div>
@@ -534,7 +537,7 @@
         <div class="mt-8 text-center">
           <div class="text-slate-400 line-through">de R$ 97,00</div>
           <div class="text-5xl font-extrabold text-brand">R$ 47,90</div>
-          <div class="text-sm text-slate-500">à vista ou em até 12x na Hotmart</div>
+          <div class="text-sm text-slate-500">à vista ou em até 4x na Hotmart</div>
         </div>
 
         <!-- Checkout da planilha na Hotmart -->
