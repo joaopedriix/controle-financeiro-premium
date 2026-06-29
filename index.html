@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Controle Financeiro Premium — Organize sua vida financeira em minutos</title>
+<meta name="description" content="A planilha de controle financeiro pessoal no Google Sheets que organiza seu dinheiro automaticamente. Saiba quanto sobra, pare de se perder nas contas e realize suas metas." />
+
+<!-- ============================================================= -->
+<!--  CONTROLE FINANCEIRO PREMIUM — LANDING PAGE                    -->
+<!--  Arquivo único · HTML + Tailwind CSS · pronto p/ Vercel/Pages  -->
+<!--                                                                 -->
+<!--  >>> TROQUE OS LINKS DA HOTMART AQUI <<<                        -->
+<!--  Procure por  data-checkout  ou  LINK_HOTMART  abaixo.          -->
+<!--  Há 2 links: planilha (R$ 47,90) e app PWA (R$ 347,90).        -->
+<!-- ============================================================= -->
+
+<style>
+*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Inter,Segoe UI,system-ui,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-x-0{left:0;right:0}.inset-x-4{left:1rem;right:1rem}.-bottom-20{bottom:-5rem}.-left-24{left:-6rem}.-right-20{right:-5rem}.-right-24{right:-6rem}.-right-3{right:-.75rem}.-top-24{top:-6rem}.-top-3{top:-.75rem}.bottom-0{bottom:0}.bottom-4{bottom:1rem}.left-1\/2{left:50%}.top-0{top:0}.top-40{top:10rem}.z-10{z-index:10}.z-50{z-index:50}.order-1{order:1}.order-2{order:2}.mx-auto{margin-left:auto;margin-right:auto}.mb-0\.5{margin-bottom:.125rem}.mb-1{margin-bottom:.25rem}.mb-10{margin-bottom:2.5rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.ml-3{margin-left:.75rem}.mt-1{margin-top:.25rem}.mt-12{margin-top:3rem}.mt-14{margin-top:3.5rem}.mt-16{margin-top:4rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-16{height:4rem}.h-2{height:.5rem}.h-24{height:6rem}.h-28{height:7rem}.h-3{height:.75rem}.h-44{height:11rem}.h-6{height:1.5rem}.h-72{height:18rem}.h-8{height:2rem}.h-80{height:20rem}.h-9{height:2.25rem}.h-\[560px\]{height:560px}.h-full{height:100%}.w-10{width:2.5rem}.w-12{width:3rem}.w-24{width:6rem}.w-3{width:.75rem}.w-32{width:8rem}.w-44{width:11rem}.w-6{width:1.5rem}.w-72{width:18rem}.w-8{width:2rem}.w-80{width:20rem}.w-9{width:2.25rem}.w-\[270px\]{width:270px}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%}.-translate-x-1\/2,.rotate-6{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.rotate-6{--tw-rotate:6deg}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-around{justify-content:space-around}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-7{gap:1.75rem}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[2\.1rem\]{border-radius:2.1rem}.rounded-\[2\.6rem\]{border-radius:2.6rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}.rounded-b-2xl{border-bottom-right-radius:1rem;border-bottom-left-radius:1rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-gold\/40{border-color:rgba(242,160,7,.4)}.border-mint{--tw-border-opacity:1;border-color:rgb(217 234 211/var(--tw-border-opacity,1))}.bg-alert\/10{background-color:rgba(204,65,37,.1)}.bg-alert\/70{background-color:rgba(204,65,37,.7)}.bg-brand{--tw-bg-opacity:1;background-color:rgb(46 125 50/var(--tw-bg-opacity,1))}.bg-cream{--tw-bg-opacity:1;background-color:rgb(243 248 240/var(--tw-bg-opacity,1))}.bg-forest{--tw-bg-opacity:1;background-color:rgb(30 107 46/var(--tw-bg-opacity,1))}.bg-gold{--tw-bg-opacity:1;background-color:rgb(242 160 7/var(--tw-bg-opacity,1))}.bg-gold\/20{background-color:rgba(242,160,7,.2)}.bg-gold\/80{background-color:rgba(242,160,7,.8)}.bg-grass{--tw-bg-opacity:1;background-color:rgb(106 168 79/var(--tw-bg-opacity,1))}.bg-leaf{--tw-bg-opacity:1;background-color:rgb(67 160 71/var(--tw-bg-opacity,1))}.bg-leaf\/80{background-color:rgba(67,160,71,.8)}.bg-mint{--tw-bg-opacity:1;background-color:rgb(217 234 211/var(--tw-bg-opacity,1))}.bg-mint\/50{background-color:rgba(217,234,211,.5)}.bg-sage{--tw-bg-opacity:1;background-color:rgb(147 196 125/var(--tw-bg-opacity,1))}.bg-sage\/30{background-color:rgba(147,196,125,.3)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42/var(--tw-bg-opacity,1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-white\/10{background-color:hsla(0,0%,100%,.1)}.bg-white\/20{background-color:hsla(0,0%,100%,.2)}.bg-white\/70{background-color:hsla(0,0%,100%,.7)}.bg-white\/90{background-color:hsla(0,0%,100%,.9)}.bg-gradient-to-b{background-image:linear-gradient(to bottom,var(--tw-gradient-stops))}.from-cream{--tw-gradient-from:#f3f8f0 var(--tw-gradient-from-position);--tw-gradient-to:hsla(98,36%,96%,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-white{--tw-gradient-from:#fff var(--tw-gradient-from-position);--tw-gradient-to:hsla(0,0%,100%,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.to-cream{--tw-gradient-to:#f3f8f0 var(--tw-gradient-to-position)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.p-2{padding:.5rem}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-20{padding-bottom:5rem}.pb-3{padding-bottom:.75rem}.pb-5{padding-bottom:1.25rem}.pt-14{padding-top:3.5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.font-sans{font-family:Inter,Segoe UI,system-ui,sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[8px\]{font-size:8px}.text-\[9px\]{font-size:9px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.08\]{line-height:1.08}.leading-none{line-height:1}.tracking-wider{letter-spacing:.05em}.text-alert{--tw-text-opacity:1;color:rgb(204 65 37/var(--tw-text-opacity,1))}.text-brand{--tw-text-opacity:1;color:rgb(46 125 50/var(--tw-text-opacity,1))}.text-forest{--tw-text-opacity:1;color:rgb(30 107 46/var(--tw-text-opacity,1))}.text-gold{--tw-text-opacity:1;color:rgb(242 160 7/var(--tw-text-opacity,1))}.text-grass{--tw-text-opacity:1;color:rgb(106 168 79/var(--tw-text-opacity,1))}.text-leaf{--tw-text-opacity:1;color:rgb(67 160 71/var(--tw-text-opacity,1))}.text-sage{--tw-text-opacity:1;color:rgb(147 196 125/var(--tw-text-opacity,1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184/var(--tw-text-opacity,1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity,1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105/var(--tw-text-opacity,1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85/var(--tw-text-opacity,1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59/var(--tw-text-opacity,1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-white\/70{color:hsla(0,0%,100%,.7)}.text-white\/80{color:hsla(0,0%,100%,.8)}.line-through{text-decoration-line:line-through}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-80{opacity:.8}.shadow-card{--tw-shadow:0 10px 30px -12px rgba(30,107,46,.25);--tw-shadow-colored:0 10px 30px -12px var(--tw-shadow-color)}.shadow-card,.shadow-soft{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-soft{--tw-shadow:0 6px 20px -8px rgba(0,0,0,.15);--tw-shadow-colored:0 6px 20px -8px var(--tw-shadow-color)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}.hover\:bg-brand:hover{--tw-bg-opacity:1;background-color:rgb(46 125 50/var(--tw-bg-opacity,1))}.hover\:text-brand:hover{--tw-text-opacity:1;color:rgb(46 125 50/var(--tw-text-opacity,1))}.hover\:brightness-95:hover{--tw-brightness:brightness(.95);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.group[open] .group-open\:rotate-45{--tw-rotate:45deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width:640px){.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:text-left{text-align:left}}@media (min-width:768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.md\:flex-row{flex-direction:row}.md\:p-5{padding:1.25rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width:1024px){.lg\:order-1{order:1}.lg\:order-2{order:2}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:text-\[3\.3rem\]{font-size:3.3rem}}
+</style>
+<style>
+  html { scroll-behavior: smooth; }
+  /* animação suave de entrada */
+  @keyframes floaty { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  .floaty { animation: floaty 5s ease-in-out infinite; }
+  @keyframes pulseRing { 0%{box-shadow:0 0 0 0 rgba(67,160,71,.45)} 70%{box-shadow:0 0 0 18px rgba(67,160,71,0)} 100%{box-shadow:0 0 0 0 rgba(67,160,71,0)} }
+  .pulse-cta { animation: pulseRing 2.2s infinite; }
+  /* conteudo sempre visivel (sem depender de JavaScript, p/ abrir no celular/WhatsApp) */
+  .reveal { opacity:1; transform:none; }
+  /* faixa rolante */
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  .marquee { animation: marquee 22s linear infinite; }
+</style>
+</head>
+
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+<!-- ===================== BARRA DE URGÊNCIA ===================== -->
+<div class="bg-forest text-white text-center text-sm py-2 px-4 font-medium">
+  🔥 Oferta de lançamento — <span class="text-gold font-bold">de R$ 97,00 por R$ 47,90</span> · vagas com bônus limitadas
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-mint">
+  <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="#topo" class="flex items-center gap-2 font-extrabold text-forest text-lg">
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-brand text-white text-xl">📊</span>
+      Controle <span class="text-leaf">Financeiro</span>
+    </a>
+    <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
+      <a href="#beneficios" class="hover:text-brand transition">Benefícios</a>
+      <a href="#recursos" class="hover:text-brand transition">O que faz</a>
+      <a href="#app" class="hover:text-brand transition">App</a>
+      <a href="#oferta" class="hover:text-brand transition">Preço</a>
+    </div>
+    <a href="#oferta"
+       class="inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-bold text-sm px-5 py-2.5 shadow-soft transition">
+       Quero a planilha
+    </a>
+  </nav>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section id="topo" class="relative overflow-hidden bg-gradient-to-b from-cream to-white">
+  <!-- blobs decorativos -->
+  <div class="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-sage/30 blur-3xl"></div>
+  <div class="pointer-events-none absolute top-40 -left-24 h-72 w-72 rounded-full bg-mint/50 blur-3xl"></div>
+
+  <div class="relative max-w-6xl mx-auto px-4 pt-14 pb-20 grid lg:grid-cols-2 gap-12 items-center">
+    <!-- Texto -->
+    <div class="reveal">
+      <span class="inline-flex items-center gap-2 rounded-full bg-mint text-forest text-xs font-bold px-4 py-1.5 mb-5">
+        ✅ Funciona 100% no Google Sheets — sem instalar nada
+      </span>
+      <h1 class="text-4xl md:text-5xl lg:text-[3.3rem] font-extrabold leading-[1.08] text-slate-900">
+        Pare de se perder nas contas e finalmente
+        <span class="text-brand">saiba quanto sobra</span> todo mês.
+      </h1>
+      <p class="mt-5 text-lg text-slate-600 max-w-xl">
+        A <strong>Controle Financeiro Premium</strong> organiza seu salário, gastos e metas
+        <strong>automaticamente</strong>. Você só preenche as células azuis — o resto a planilha calcula sozinha,
+        com gráficos, saldo livre e alertas de crédito.
+      </p>
+
+      <!-- mini provas -->
+      <ul class="mt-6 grid sm:grid-cols-2 gap-3 text-sm font-medium text-slate-700">
+        <li class="flex items-center gap-2"><span class="text-leaf font-bold">✔</span> 12 meses prontos + Dashboard anual</li>
+        <li class="flex items-center gap-2"><span class="text-leaf font-bold">✔</span> Cálculos e gráficos automáticos</li>
+        <li class="flex items-center gap-2"><span class="text-leaf font-bold">✔</span> Metas e reserva de emergência</li>
+        <li class="flex items-center gap-2"><span class="text-leaf font-bold">✔</span> Acesse do PC ou do celular</li>
+      </ul>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <a href="#oferta"
+           class="pulse-cta inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-8 py-4 shadow-card transition">
+           Quero organizar minhas finanças →
+        </a>
+        <div class="text-sm">
+          <div class="font-bold text-slate-900">R$ 47,90 <span class="text-slate-400 line-through font-normal">R$ 97,00</span></div>
+          <div class="text-slate-500">ou 12x na Hotmart</div>
+        </div>
+      </div>
+
+      <div class="mt-6 flex items-center gap-4 text-xs text-slate-500">
+        <span class="flex items-center gap-1">🔒 Compra segura Hotmart</span>
+        <span class="flex items-center gap-1">⭐ 7 dias de garantia</span>
+        <span class="flex items-center gap-1">⚡ Acesso imediato</span>
+      </div>
+    </div>
+
+    <!-- Mockup do Dashboard (réplica em SVG da planilha) -->
+    <div class="reveal">
+      <div class="floaty bg-white rounded-2xl shadow-card border border-mint p-4 md:p-5">
+        <!-- barra estilo navegador/planilha -->
+        <div class="flex items-center gap-1.5 pb-3 mb-3 border-b border-mint">
+          <span class="h-3 w-3 rounded-full bg-alert/70"></span>
+          <span class="h-3 w-3 rounded-full bg-gold/80"></span>
+          <span class="h-3 w-3 rounded-full bg-leaf/80"></span>
+          <span class="ml-3 text-xs font-semibold text-slate-500">Controle Financeiro Premium — Janeiro</span>
+        </div>
+
+        <!-- cards de topo -->
+        <div class="grid grid-cols-3 gap-2 mb-3">
+          <div class="rounded-lg overflow-hidden border border-mint">
+            <div class="bg-grass text-white text-[10px] font-bold text-center py-1">Entradas</div>
+            <div class="text-center text-xs font-extrabold text-brand py-1.5">R$ 9.200</div>
+          </div>
+          <div class="rounded-lg overflow-hidden border border-mint">
+            <div class="bg-grass text-white text-[10px] font-bold text-center py-1">Saídas</div>
+            <div class="text-center text-xs font-extrabold text-alert py-1.5">R$ 1.080</div>
+          </div>
+          <div class="rounded-lg overflow-hidden border border-mint">
+            <div class="bg-grass text-white text-[10px] font-bold text-center py-1">Reservas</div>
+            <div class="text-center text-xs font-extrabold text-slate-700 py-1.5">R$ 300</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <!-- Rosca Saldo Livre -->
+          <div class="rounded-lg border border-mint p-3">
+            <div class="text-[10px] font-bold text-center text-slate-500 mb-1">Saldo Livre</div>
+            <svg viewBox="0 0 120 120" class="w-full h-28">
+              <circle cx="60" cy="60" r="46" fill="none" stroke="#E5E7EB" stroke-width="16"/>
+              <circle cx="60" cy="60" r="46" fill="none" stroke="#2E7D32" stroke-width="16"
+                      stroke-dasharray="289" stroke-dashoffset="62" stroke-linecap="round"
+                      transform="rotate(-90 60 60)"/>
+              <text x="60" y="58" text-anchor="middle" font-size="13" font-weight="800" fill="#1E6B2E">R$ 8.120</text>
+              <text x="60" y="72" text-anchor="middle" font-size="7" fill="#94A3B8">disponível</text>
+            </svg>
+          </div>
+          <!-- Barras Planejado x Real -->
+          <div class="rounded-lg border border-mint p-3">
+            <div class="text-[10px] font-bold text-center text-slate-500 mb-2">Planejado × Real</div>
+            <div class="space-y-2">
+              <div><div class="text-[8px] text-slate-500 mb-0.5">Aluguel</div>
+                <div class="h-2 rounded bg-sage" style="width:92%"></div></div>
+              <div><div class="text-[8px] text-slate-500 mb-0.5">Alimentação</div>
+                <div class="h-2 rounded bg-grass" style="width:78%"></div></div>
+              <div><div class="text-[8px] text-slate-500 mb-0.5">Moto</div>
+                <div class="h-2 rounded bg-brand" style="width:64%"></div></div>
+              <div><div class="text-[8px] text-slate-500 mb-0.5">Energia</div>
+                <div class="h-2 rounded bg-sage" style="width:30%"></div></div>
+              <div><div class="text-[8px] text-slate-500 mb-0.5">Internet</div>
+                <div class="h-2 rounded bg-grass" style="width:22%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- alerta -->
+        <div class="mt-3 flex items-center gap-2 rounded-lg bg-alert/10 text-alert text-[10px] font-semibold px-3 py-2">
+          🚨 Alerta de crédito: revise os gastos no cartão deste mês
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- faixa rolante de confiança -->
+  <div class="border-t border-mint bg-white/70 overflow-hidden">
+    <div class="flex whitespace-nowrap py-3 marquee">
+      <div class="flex gap-10 px-5 text-sm font-semibold text-slate-400">
+        <span>📊 Dashboard anual</span><span>💰 Salários & rendas</span><span>🛒 Despesas variáveis</span>
+        <span>🏠 Gastos fixos</span><span>🎯 Metas & reservas</span><span>📈 Gráficos automáticos</span>
+        <span>🚨 Alerta de crédito</span><span>📱 Funciona no celular</span>
+      </div>
+      <div class="flex gap-10 px-5 text-sm font-semibold text-slate-400" aria-hidden="true">
+        <span>📊 Dashboard anual</span><span>💰 Salários & rendas</span><span>🛒 Despesas variáveis</span>
+        <span>🏠 Gastos fixos</span><span>🎯 Metas & reservas</span><span>📈 Gráficos automáticos</span>
+        <span>🚨 Alerta de crédito</span><span>📱 Funciona no celular</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DOR DO PÚBLICO ===================== -->
+<section class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-4 text-center reveal">
+    <span class="text-sm font-bold uppercase tracking-wider text-alert">Soa familiar?</span>
+    <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">
+      O dinheiro entra… e some antes do fim do mês.
+    </h2>
+    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+      Quando não há controle, todo mês vira o mesmo filme: a sensação de que ganha bem,
+      mas nunca sobra. O problema quase nunca é o quanto você ganha — é a <strong>falta de clareza</strong>.
+    </p>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 mt-12 grid md:grid-cols-3 gap-6">
+    <div class="reveal rounded-2xl border border-mint bg-cream p-6">
+      <div class="text-3xl mb-3">😰</div>
+      <h3 class="font-bold text-lg text-slate-900">"Para onde foi meu dinheiro?"</h3>
+      <p class="mt-2 text-slate-600 text-sm">Você chega no fim do mês sem saber em que gastou. Sem registro, não dá pra cortar o que não importa.</p>
+    </div>
+    <div class="reveal rounded-2xl border border-mint bg-cream p-6">
+      <div class="text-3xl mb-3">💳</div>
+      <h3 class="font-bold text-lg text-slate-900">A fatura sempre assusta</h3>
+      <p class="mt-2 text-slate-600 text-sm">Compras no crédito que você esqueceu acumulam e estouram o orçamento do mês seguinte.</p>
+    </div>
+    <div class="reveal rounded-2xl border border-mint bg-cream p-6">
+      <div class="text-3xl mb-3">🎯</div>
+      <h3 class="font-bold text-lg text-slate-900">Metas que nunca saem do papel</h3>
+      <p class="mt-2 text-slate-600 text-sm">Reserva de emergência, viagem, sair das dívidas… sem um plano visível, fica só na intenção.</p>
+    </div>
+  </div>
+
+  <div class="max-w-3xl mx-auto px-4 mt-12 text-center reveal">
+    <div class="inline-block rounded-2xl bg-brand text-white px-8 py-6 shadow-card">
+      <p class="text-lg md:text-xl font-semibold">
+        Imagine abrir uma planilha e, em 30 segundos, ver exatamente
+        <span class="text-gold">quanto você tem livre para gastar hoje.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BENEFÍCIOS ===================== -->
+<section id="beneficios" class="py-20 bg-cream">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center reveal">
+      <span class="text-sm font-bold uppercase tracking-wider text-brand">Por que ela funciona</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Clareza no lugar de planilha complicada</h2>
+      <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Pensada para quem não entende de finanças. Você só preenche — ela faz as contas.</p>
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- card -->
+      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
+        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">⚡</div>
+        <h3 class="font-bold text-lg text-slate-900">Tudo automático</h3>
+        <p class="mt-2 text-sm text-slate-600">Saldo, totais e gráficos se atualizam sozinhos. Preencheu, calculou. Sem fórmula manual.</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
+        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">🔄</div>
+        <h3 class="font-bold text-lg text-slate-900">Rendas e fixos se repetem</h3>
+        <p class="mt-2 text-sm text-slate-600">Cadastrou o salário e as contas fixas uma vez? Elas voltam todo mês. Chega de redigitar.</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
+        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">📊</div>
+        <h3 class="font-bold text-lg text-slate-900">Dashboard anual</h3>
+        <p class="mt-2 text-sm text-slate-600">Veja o ano inteiro num só lugar: entradas, gastos e saldo mês a mês, com gráficos prontos.</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
+        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">🎯</div>
+        <h3 class="font-bold text-lg text-slate-900">Metas com progresso</h3>
+        <p class="mt-2 text-sm text-slate-600">Defina objetivos e acompanhe a % concluída e a reserva de emergência crescendo.</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
+        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">🚨</div>
+        <h3 class="font-bold text-lg text-slate-900">Alerta de crédito</h3>
+        <p class="mt-2 text-sm text-slate-600">A planilha avisa quando o cartão pode estourar o próximo mês. Você nunca mais é pego de surpresa.</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
+        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">📱</div>
+        <h3 class="font-bold text-lg text-slate-900">PC e celular</h3>
+        <p class="mt-2 text-sm text-slate-600">Roda no Google Sheets grátis. Lance um gasto na hora pelo celular, em qualquer lugar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== O QUE A PLANILHA FAZ (RECURSOS) ===================== -->
+<section id="recursos" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center reveal">
+      <span class="text-sm font-bold uppercase tracking-wider text-brand">Por dentro da planilha</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Veja o que ela faz por você</h2>
+    </div>
+
+    <!-- Recurso 1 -->
+    <div class="mt-14 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="reveal order-2 lg:order-1">
+        <span class="text-xs font-bold uppercase tracking-wider text-grass">Visão do mês</span>
+        <h3 class="mt-2 text-2xl font-extrabold text-slate-900">Seu saldo livre em um gráfico</h3>
+        <p class="mt-3 text-slate-600">A rosca de <strong>Saldo Livre</strong> mostra quanto sobra depois de pagar tudo.
+          Conforme você marca os gastos como pagos, ela diminui em tempo real. Bateu o olho, entendeu a sua situação.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span class="text-leaf">✔</span> Entradas, saídas e reservas no topo</li>
+          <li class="flex gap-2"><span class="text-leaf">✔</span> Comparação com o mês anterior</li>
+          <li class="flex gap-2"><span class="text-leaf">✔</span> Atualização instantânea</li>
+        </ul>
+      </div>
+      <!-- mock -->
+      <div class="reveal order-1 lg:order-2">
+        <div class="rounded-2xl border border-mint shadow-card p-6 bg-cream">
+          <div class="grid grid-cols-3 gap-2 mb-4">
+            <div class="rounded-lg bg-white border border-mint text-center py-2">
+              <div class="text-[10px] text-grass font-bold">ENTRADAS</div><div class="text-sm font-extrabold text-brand">R$ 9.200</div></div>
+            <div class="rounded-lg bg-white border border-mint text-center py-2">
+              <div class="text-[10px] text-grass font-bold">SAÍDAS</div><div class="text-sm font-extrabold text-alert">R$ 1.080</div></div>
+            <div class="rounded-lg bg-white border border-mint text-center py-2">
+              <div class="text-[10px] text-grass font-bold">RESERVA</div><div class="text-sm font-extrabold text-slate-700">R$ 300</div></div>
+          </div>
+          <div class="flex justify-center">
+            <svg viewBox="0 0 160 160" class="w-44 h-44">
+              <circle cx="80" cy="80" r="60" fill="none" stroke="#E5E7EB" stroke-width="22"/>
+              <circle cx="80" cy="80" r="60" fill="none" stroke="#2E7D32" stroke-width="22"
+                      stroke-dasharray="377" stroke-dashoffset="80" stroke-linecap="round" transform="rotate(-90 80 80)"/>
+              <text x="80" y="78" text-anchor="middle" font-size="20" font-weight="800" fill="#1E6B2E">R$ 8.120</text>
+              <text x="80" y="96" text-anchor="middle" font-size="9" fill="#94A3B8">Saldo Livre</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recurso 2 -->
+    <div class="mt-16 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="reveal">
+        <div class="rounded-2xl border border-mint shadow-card p-6 bg-cream">
+          <div class="text-xs font-bold text-grass mb-3">PLANEJADO × REAL</div>
+          <div class="space-y-3">
+            <div><div class="flex justify-between text-[11px] text-slate-500"><span>Aluguel</span><span>R$ 1.500</span></div>
+              <div class="h-3 rounded bg-sage" style="width:95%"></div></div>
+            <div><div class="flex justify-between text-[11px] text-slate-500"><span>Alimentação</span><span>R$ 1.300</span></div>
+              <div class="h-3 rounded bg-grass" style="width:82%"></div></div>
+            <div><div class="flex justify-between text-[11px] text-slate-500"><span>Moto</span><span>R$ 930</span></div>
+              <div class="h-3 rounded bg-brand" style="width:60%"></div></div>
+            <div><div class="flex justify-between text-[11px] text-slate-500"><span>Energia</span><span>R$ 235</span></div>
+              <div class="h-3 rounded bg-sage" style="width:18%"></div></div>
+            <div><div class="flex justify-between text-[11px] text-slate-500"><span>Internet</span><span>R$ 100</span></div>
+              <div class="h-3 rounded bg-grass" style="width:10%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="text-xs font-bold uppercase tracking-wider text-grass">Gastos sob controle</span>
+        <h3 class="mt-2 text-2xl font-extrabold text-slate-900">Planejado x Realizado, lado a lado</h3>
+        <p class="mt-3 text-slate-600">Defina quanto pretende gastar em cada categoria e compare com o que gastou de verdade.
+          A planilha mostra na hora se você ficou <strong>abaixo</strong> ou <strong>acima</strong> do combinado.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span class="text-leaf">✔</span> Despesas variáveis e gastos fixos separados</li>
+          <li class="flex gap-2"><span class="text-leaf">✔</span> Marcação de "essencial" que se repete sozinha</li>
+          <li class="flex gap-2"><span class="text-leaf">✔</span> Crédito que cai no mês seguinte, automático</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Recurso 3 -->
+    <div class="mt-16 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="reveal order-2 lg:order-1">
+        <span class="text-xs font-bold uppercase tracking-wider text-grass">Visão do ano</span>
+        <h3 class="mt-2 text-2xl font-extrabold text-slate-900">Dashboard anual que se preenche sozinho</h3>
+        <p class="mt-3 text-slate-600">Cada mês que você usa alimenta o painel anual. No fim do ano você enxerga
+          a evolução das suas finanças — e prova pra você mesmo que mudou de vida.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span class="text-leaf">✔</span> Saldo acumulado mês a mês</li>
+          <li class="flex gap-2"><span class="text-leaf">✔</span> Total anual de entradas e gastos</li>
+          <li class="flex gap-2"><span class="text-leaf">✔</span> Saldo de um mês vira crédito do próximo</li>
+        </ul>
+      </div>
+      <div class="reveal order-1 lg:order-2">
+        <div class="rounded-2xl border border-mint shadow-card p-6 bg-cream">
+          <div class="text-xs font-bold text-grass mb-3">SALDO ACUMULADO 2026</div>
+          <svg viewBox="0 0 320 150" class="w-full">
+            <line x1="10" y1="120" x2="310" y2="120" stroke="#CBD5E1" stroke-width="1"/>
+            <polyline fill="none" stroke="#2E7D32" stroke-width="3"
+              points="10,100 35,92 60,95 85,80 110,70 135,72 160,55 185,48 210,40 235,33 260,28 285,18"/>
+            <polygon fill="#2E7D32" fill-opacity="0.08"
+              points="10,100 35,92 60,95 85,80 110,70 135,72 160,55 185,48 210,40 235,33 260,28 285,18 285,120 10,120"/>
+            <g fill="#1E6B2E">
+              <circle cx="10" cy="100" r="3"/><circle cx="85" cy="80" r="3"/><circle cx="160" cy="55" r="3"/>
+              <circle cx="235" cy="33" r="3"/><circle cx="285" cy="18" r="3"/>
+            </g>
+          </svg>
+          <div class="flex justify-between text-[10px] text-slate-400 mt-1 px-1">
+            <span>Jan</span><span>Abr</span><span>Jul</span><span>Out</span><span>Dez</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== O QUE VEM JUNTO ===================== -->
+<section class="py-16 bg-forest text-white">
+  <div class="max-w-5xl mx-auto px-4 text-center reveal">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Tudo isso já vem na planilha</h2>
+    <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+      <div class="rounded-xl bg-white/10 p-5"><div class="text-2xl mb-2">📅</div>12 abas mensais prontas</div>
+      <div class="rounded-xl bg-white/10 p-5"><div class="text-2xl mb-2">📈</div>Dashboard anual com gráficos</div>
+      <div class="rounded-xl bg-white/10 p-5"><div class="text-2xl mb-2">🎯</div>Controle de metas e reservas</div>
+      <div class="rounded-xl bg-white/10 p-5"><div class="text-2xl mb-2">📖</div>Guia de uso passo a passo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== UPSELL APP (PWA) ===================== -->
+<section id="app" class="py-20 bg-gradient-to-b from-white to-cream relative overflow-hidden">
+  <div class="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-sage/30 blur-3xl"></div>
+  <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative">
+    <!-- Mockup de celular -->
+    <div class="reveal flex justify-center order-2 lg:order-1">
+      <div class="floaty relative">
+        <!-- aparelho -->
+        <div class="w-[270px] h-[560px] rounded-[2.6rem] bg-slate-900 p-3 shadow-card">
+          <div class="w-full h-full rounded-[2.1rem] bg-cream overflow-hidden relative">
+            <!-- notch -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-32 bg-slate-900 rounded-b-2xl z-10"></div>
+            <!-- header app -->
+            <div class="bg-brand text-white pt-8 pb-5 px-4">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-[10px] opacity-80">Olá, João 👋</div>
+                  <div class="text-sm font-bold">Junho 2026</div>
+                </div>
+                <span class="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center">⚙️</span>
+              </div>
+              <div class="mt-4 rounded-xl bg-white/10 p-3">
+                <div class="text-[10px] opacity-80">Saldo livre</div>
+                <div class="text-2xl font-extrabold">R$ 8.120,00</div>
+                <div class="text-[10px] text-sage">▲ 12% vs. mês anterior</div>
+              </div>
+            </div>
+            <!-- corpo -->
+            <div class="p-4 space-y-3">
+              <div class="flex gap-2">
+                <div class="flex-1 rounded-xl bg-white border border-mint p-2 text-center">
+                  <div class="text-[9px] text-grass font-bold">ENTRADAS</div>
+                  <div class="text-xs font-extrabold text-brand">R$ 9.200</div></div>
+                <div class="flex-1 rounded-xl bg-white border border-mint p-2 text-center">
+                  <div class="text-[9px] text-grass font-bold">GASTOS</div>
+                  <div class="text-xs font-extrabold text-alert">R$ 1.080</div></div>
+              </div>
+              <div class="rounded-xl bg-white border border-mint p-3">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-[10px] font-bold text-slate-500">Por categoria</span>
+                  <span class="text-[9px] text-grass">ver tudo</span>
+                </div>
+                <div class="space-y-2">
+                  <div class="flex items-center gap-2"><span class="text-xs">🏠</span>
+                    <div class="flex-1 h-2 rounded bg-sage" style="width:90%"></div></div>
+                  <div class="flex items-center gap-2"><span class="text-xs">🛒</span>
+                    <div class="flex-1 h-2 rounded bg-grass" style="width:70%"></div></div>
+                  <div class="flex items-center gap-2"><span class="text-xs">⛽</span>
+                    <div class="flex-1 h-2 rounded bg-brand" style="width:45%"></div></div>
+                </div>
+              </div>
+              <button class="w-full rounded-xl bg-leaf text-white text-xs font-bold py-2.5">+ Lançar gasto</button>
+            </div>
+            <!-- tab bar -->
+            <div class="absolute bottom-0 inset-x-0 bg-white border-t border-mint flex justify-around py-2 text-lg">
+              <span>🏠</span><span>📊</span><span class="text-brand">➕</span><span>🎯</span><span>👤</span>
+            </div>
+          </div>
+        </div>
+        <!-- selo -->
+        <div class="absolute -top-3 -right-3 rotate-6 rounded-full bg-gold text-forest text-xs font-extrabold px-3 py-2 shadow-soft">
+          NOVO 🚀
+        </div>
+      </div>
+    </div>
+
+    <!-- Texto upsell -->
+    <div class="reveal order-1 lg:order-2">
+      <span class="inline-flex items-center gap-2 rounded-full bg-gold/20 text-gold-700 text-xs font-bold px-4 py-1.5 mb-4" style="color:#9a6700">
+        ⭐ Upgrade opcional
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+        Leve seu controle para o <span class="text-brand">aplicativo no celular</span>
+      </h2>
+      <p class="mt-4 text-lg text-slate-600">
+        O app (PWA) transforma a sua planilha numa experiência de aplicativo: instala na tela inicial,
+        abre em 1 toque e lança gastos na hora — sem abrir o Sheets, sem rolar célula.
+      </p>
+      <ul class="mt-6 space-y-3 text-slate-700">
+        <li class="flex gap-3"><span class="h-6 w-6 shrink-0 rounded-full bg-mint text-brand flex items-center justify-center text-sm">✔</span> Instala como app no Android e iPhone — sem loja de apps</li>
+        <li class="flex gap-3"><span class="h-6 w-6 shrink-0 rounded-full bg-mint text-brand flex items-center justify-center text-sm">✔</span> Lançamento de gastos em segundos, na hora da compra</li>
+        <li class="flex gap-3"><span class="h-6 w-6 shrink-0 rounded-full bg-mint text-brand flex items-center justify-center text-sm">✔</span> Dashboard e metas na palma da mão</li>
+        <li class="flex gap-3"><span class="h-6 w-6 shrink-0 rounded-full bg-mint text-brand flex items-center justify-center text-sm">✔</span> Funciona offline e sincroniza depois</li>
+      </ul>
+
+      <div class="mt-8 rounded-2xl border-2 border-gold/40 bg-white p-6 shadow-soft">
+        <div class="flex items-end justify-between flex-wrap gap-4">
+          <div>
+            <div class="text-sm text-slate-500">App Mobile (PWA)</div>
+            <div class="text-3xl font-extrabold text-slate-900">R$ 347,90</div>
+            <div class="text-xs text-slate-500">acesso vitalício · atualizações incluídas</div>
+          </div>
+          <!-- App ainda nao lancado. Quando criar o produto na Hotmart, troque este
+               <span> por: <a href="LINK_DO_CHECKOUT_DO_APP" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 rounded-full bg-forest hover:bg-brand text-white font-bold px-6 py-3.5 shadow-soft transition">Quero o app &rarr;</a> -->
+          <span aria-disabled="true"
+             class="inline-flex items-center gap-2 rounded-full bg-slate-200 text-slate-500 font-bold px-6 py-3.5 cursor-not-allowed select-none">
+             Em breve
+          </span>
+        </div>
+      </div>
+      <p class="mt-3 text-xs text-slate-500">💡 Lançamento em breve — quem comprar a planilha terá uma oferta especial.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== OFERTA / PREÇO ===================== -->
+<section id="oferta" class="py-20 bg-cream">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="text-center reveal mb-10">
+      <span class="text-sm font-bold uppercase tracking-wider text-brand">Oferta de lançamento</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Comece a organizar seu dinheiro hoje</h2>
+    </div>
+
+    <div class="reveal rounded-3xl bg-white border border-mint shadow-card overflow-hidden">
+      <div class="bg-forest text-white text-center py-4 font-bold">
+        📊 Controle Financeiro Premium — Planilha completa
+      </div>
+      <div class="p-8">
+        <ul class="space-y-3 text-slate-700">
+          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> 12 abas mensais + Dashboard anual automático</li>
+          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Gráficos de saldo livre, planejado x real e evolução</li>
+          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Controle de metas, reservas e alerta de crédito</li>
+          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Guia de uso passo a passo incluso</li>
+          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Acesso imediato e vitalício no Google Sheets</li>
+        </ul>
+
+        <div class="mt-8 text-center">
+          <div class="text-slate-400 line-through">de R$ 97,00</div>
+          <div class="text-5xl font-extrabold text-brand">R$ 47,90</div>
+          <div class="text-sm text-slate-500">à vista ou em até 12x na Hotmart</div>
+        </div>
+
+        <!-- Checkout da planilha na Hotmart -->
+        <a href="https://pay.hotmart.com/J105830027G" target="_blank" rel="noopener" data-checkout="planilha"
+           class="pulse-cta mt-8 w-full inline-flex items-center justify-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-8 py-5 shadow-card transition">
+           👉 Comprar agora na Hotmart
+        </a>
+
+        <div class="mt-5 flex items-center justify-center gap-5 text-xs text-slate-500">
+          <span>🔒 Pagamento seguro</span><span>⚡ Acesso imediato</span><span>⭐ Garantia 7 dias</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GARANTIA ===================== -->
+<section class="py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-4 reveal">
+    <div class="rounded-3xl border-2 border-mint bg-cream p-8 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+      <div class="shrink-0">
+        <div class="h-24 w-24 rounded-full bg-brand text-white flex flex-col items-center justify-center shadow-card">
+          <span class="text-2xl font-extrabold leading-none">7</span>
+          <span class="text-[10px] font-bold">DIAS</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-2xl font-extrabold text-slate-900">Garantia incondicional de 7 dias</h3>
+        <p class="mt-2 text-slate-600">Use a planilha por uma semana inteira. Se por qualquer motivo ela não for pra você,
+          é só pedir o reembolso dentro do prazo pela Hotmart e devolvemos <strong>100% do seu dinheiro</strong>.
+          O risco é todo nosso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="py-20 bg-cream">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="text-center reveal mb-10">
+      <span class="text-sm font-bold uppercase tracking-wider text-brand">Dúvidas frequentes</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Perguntas que todo mundo faz</h2>
+    </div>
+
+    <div class="space-y-3">
+      <details class="reveal group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          Preciso saber usar Excel ou planilhas? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">Não. Você só preenche as células azuis (salário, gastos, metas). Todo o cálculo é automático.</p>
+      </details>
+      <details class="reveal group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          Funciona no celular? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">Sim. Roda no app gratuito do Google Sheets no Android e iPhone. Para uma experiência de aplicativo de verdade, há o upgrade do app (PWA).</p>
+      </details>
+      <details class="reveal group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          Como recebo a planilha depois de comprar? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">O acesso é imediato após a confirmação do pagamento na Hotmart. Você recebe o link para fazer sua própria cópia no Google Sheets.</p>
+      </details>
+      <details class="reveal group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          Preciso pagar mensalidade? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">Não. Você paga uma vez e o acesso é vitalício. O Google Sheets também é gratuito.</p>
+      </details>
+      <details class="reveal group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          E se eu não gostar? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">Você tem 7 dias de garantia. Se não for pra você, pede reembolso pela Hotmart e recebe tudo de volta.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA FINAL ===================== -->
+<section class="py-20 bg-forest text-white text-center">
+  <div class="max-w-2xl mx-auto px-4 reveal">
+    <h2 class="text-3xl md:text-4xl font-extrabold">O próximo mês pode ser diferente.</h2>
+    <p class="mt-4 text-lg text-white/80">Em poucos minutos você instala a clareza que faltava nas suas finanças. Por menos do que um delivery.</p>
+    <a href="#oferta"
+       class="mt-8 inline-flex items-center gap-2 rounded-full bg-gold hover:brightness-95 text-forest font-extrabold text-lg px-10 py-5 shadow-card transition">
+       Quero minha planilha por R$ 47,90 →
+    </a>
+    <div class="mt-5 text-sm text-white/70">🔒 Compra segura · ⭐ 7 dias de garantia · ⚡ Acesso imediato</div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-slate-900 text-slate-400 py-10">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+    <div class="flex items-center gap-2 font-bold text-white">
+      <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand">📊</span>
+      Controle Financeiro Premium
+    </div>
+    <p class="text-center">© 2026 — Todos os direitos reservados. Produto comercializado via Hotmart.</p>
+  </div>
+  <p class="max-w-6xl mx-auto px-4 mt-6 text-xs text-slate-500 text-center">
+    Este produto não garante resultados financeiros. O Google Sheets é uma marca da Google LLC.
+  </p>
+</footer>
+
+<!-- ===================== BOTÃO FLUTUANTE (MOBILE) ===================== -->
+<a href="#oferta"
+   class="md:hidden fixed bottom-4 inset-x-4 z-50 inline-flex items-center justify-center gap-2 rounded-full bg-leaf text-white font-extrabold py-4 shadow-card">
+   Comprar por R$ 47,90 →
+</a>
+
+<script>
+  /* ============================================================
+     LINKS DA HOTMART
+     Cole aqui os links de checkout. Assim que preencher, os
+     botões passam a abrir o checkout em nova aba automaticamente.
+     ============================================================ */
+  const LINK_HOTMART = {
+    planilha: "https://pay.hotmart.com/J105830027G",  // checkout da PLANILHA (R$ 47,90)
+    app:      ""   // <-- APP PWA (R$ 347,90) ainda nao criado na Hotmart; cole o checkout quando existir
+  };
+  document.querySelectorAll('[data-checkout]').forEach(btn => {
+    const url = LINK_HOTMART[btn.getAttribute('data-checkout')];
+    if (url) { btn.setAttribute('href', url); btn.setAttribute('target', '_blank'); btn.setAttribute('rel', 'noopener'); }
+  });
+</script>
+</body>
+</html>
