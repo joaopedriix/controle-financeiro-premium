@@ -326,7 +326,7 @@ footer{text-align:center; color:var(--grey); font-size:12.5px; padding:26px 0}
 
 <script>
 "use strict";
-const KEY="cfp_app_v1";
+const KEY="cfp_app_v2";
 const MESES=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
 const CAT_SUG=["Moradia/Aluguel","Alimentação","Mercado","Transporte","Energia","Água","Internet","Telefone","Cartão de crédito","Saúde","Educação","Lazer","Assinaturas","Pets","Outros","Salário","Freelas/Extra","Vendas","Rendimentos"];
 const CAT_COLORS=["#2E7D32","#43A047","#6AA84F","#93C47D","#F2A007","#FFC942","#CC4125","#E0573B","#1E6B2E","#B5730A","#5B8C3E","#C9A227","#7FA96B","#A8552E"];
@@ -344,21 +344,24 @@ function seed(){
   return {
     mesAtual:ym,
     meses:{ [ym]: exampleMonth() },
-    metas:[{id:uid(),nome:"Reserva de emergência",alvo:6000,guardado:1200}],
+    metas:[{id:uid(),nome:"Reserva de emergência",alvo:1000,guardado:0},
+           {id:uid(),nome:"Viajar",alvo:3000,guardado:0}],
     historico:[],
     exemplo:true
   };
 }
 function exampleMonth(){
   return {lancamentos:[
-    {id:uid(),tipo:"entrada",desc:"Salário",cat:"Salário",plan:4500,pago:4500,fixo:true,ok:true},
-    {id:uid(),tipo:"entrada",desc:"Freelas",cat:"Freelas/Extra",plan:800,pago:650,fixo:false,ok:true},
+    {id:uid(),tipo:"entrada",desc:"Salário",cat:"Salário",plan:9000,pago:9000,fixo:true,ok:true},
+    {id:uid(),tipo:"entrada",desc:"Trabalho extra",cat:"Freelas/Extra",plan:200,pago:200,fixo:false,ok:true},
+    {id:uid(),tipo:"saida",desc:"Contas (crédito próx. mês)",cat:"Cartão de crédito",plan:150,pago:150,fixo:false,ok:true},
     {id:uid(),tipo:"saida",desc:"Aluguel",cat:"Moradia/Aluguel",plan:1500,pago:1500,fixo:true,ok:true},
-    {id:uid(),tipo:"saida",desc:"Mercado",cat:"Mercado",plan:900,pago:820,fixo:false,ok:true},
-    {id:uid(),tipo:"saida",desc:"Energia",cat:"Energia",plan:220,pago:243,fixo:true,ok:true},
-    {id:uid(),tipo:"saida",desc:"Internet",cat:"Internet",plan:110,pago:110,fixo:true,ok:true},
-    {id:uid(),tipo:"saida",desc:"Transporte",cat:"Transporte",plan:400,pago:280,fixo:false,ok:false},
-    {id:uid(),tipo:"saida",desc:"Lazer",cat:"Lazer",plan:300,pago:190,fixo:false,ok:true},
+    {id:uid(),tipo:"saida",desc:"Alimentação",cat:"Alimentação",plan:1300,pago:1300,fixo:true,ok:true},
+    {id:uid(),tipo:"saida",desc:"Moto",cat:"Transporte",plan:928,pago:930,fixo:true,ok:true},
+    {id:uid(),tipo:"saida",desc:"Energia",cat:"Energia",plan:235,pago:235,fixo:true,ok:true},
+    {id:uid(),tipo:"saida",desc:"Ração",cat:"Pets",plan:240,pago:240,fixo:true,ok:true},
+    {id:uid(),tipo:"saida",desc:"Internet",cat:"Internet",plan:100,pago:100,fixo:true,ok:true},
+    {id:uid(),tipo:"saida",desc:"Plano celular",cat:"Telefone",plan:66,pago:66,fixo:true,ok:true},
   ], cardLimite:2000};
 }
 function load(){ try{const r=localStorage.getItem(KEY); if(r) return JSON.parse(r);}catch(e){} return seed(); }
