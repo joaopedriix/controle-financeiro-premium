@@ -432,7 +432,7 @@ function renderCharts(m,t){
   if(!rows.length){ bars.innerHTML=emptyChart("Adicione saídas para ver"); }
   else{
     const maxv=Math.max(...rows.map(([,d])=>Math.max(d.plan,d.real)),1);
-    const rowH=44, w=Math.min(bars.parentElement.offsetWidth||440,520), bw=w-150, x0=140;
+    const rowH=44, w=Math.min(bars.parentElement.offsetWidth||440,520), x0=140, bw=w-x0-66;
     let svg=`<svg width="100%" viewBox="0 0 ${w} ${rows.length*rowH+8}">`;
     rows.forEach(([name,d],i)=>{
       const y=i*rowH+8;
