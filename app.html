@@ -164,6 +164,13 @@ input:focus,select:focus{outline:none; border-color:var(--green2)!important; box
 .meta .mh{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:8px}
 .meta .mn{font-weight:700; font-size:15px}
 .meta .mv{font-size:12.5px; color:var(--muted); font-weight:600}
+.meta .mcols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:11px 0}
+.meta .mcol{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 10px;text-align:center}
+.meta .mcol small{display:block;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;margin-bottom:3px}
+.meta .mcol b{font-size:15px;font-weight:800}
+.meta .mcol.res{border-color:rgba(61,220,127,.45)} .meta .mcol.res b{color:var(--green)}
+.meta .mcol.goal{border-color:rgba(255,201,66,.45)} .meta .mcol.goal b{color:var(--gold)}
+.bar.big{height:16px}
 .bar{height:11px; background:rgba(255,255,255,.06); border-radius:20px; overflow:hidden}
 .bar > i{display:block; height:100%; border-radius:20px; background:linear-gradient(90deg,var(--green2),var(--green))}
 .meta .mact{display:flex; gap:8px; margin-top:11px; align-items:center; flex-wrap:wrap}
@@ -526,7 +533,7 @@ function renderCats(){ const used=new Set([...CAT_OUT,...CAT_IN].map(x=>x[0]));
 function renderMetas(){ const box=document.getElementById("metasList");
   if(!S.metas.length){ box.innerHTML=`<div class="empty">Nenhuma meta ainda. Crie uma abaixo 👇</div>`; return; }
   box.innerHTML=S.metas.map(g=>{ const frac=g.alvo?Math.min(g.guardado/g.alvo,1):0,pct=Math.round(frac*100);
-    return `<div class="meta" data-mid="${g.id}"><div class="mh"><div class="mn">${esc(g.nome)}</div><div class="mv">${fmt(g.guardado)} de ${fmt(g.alvo)} · ${pct}%</div></div><div class="bar"><i style="width:${pct}%"></i></div><div class="mact"><input type="number" placeholder="R$" data-mv min="0" step="50"><button class="mini" data-madd="${g.id}">+ Guardar</button><button class="mini ghost" data-msub="${g.id}">− Retirar</button><button class="mini ghost" data-mdel="${g.id}" style="margin-left:auto;color:var(--red)">Excluir</button></div></div>`;
+    return `<div class="meta" data-mid="${g.id}"><div class="mh"><div class="mn">${esc(g.nome)}</div><div class="mv">${pct}% concluído</div></div><div class="mcols"><div class="mcol res"><small>Reserva · guardado</small><b>${fmt(g.guardado)}</b></div><div class="mcol goal"><small>Meta · objetivo</small><b>${fmt(g.alvo)}</b></div><div class="mcol"><small>Falta</small><b>${fmt(Math.max(0,(g.alvo||0)-(g.guardado||0)))}</b></div></div><div class="bar big"><i style="width:${pct}%"></i></div><div class="mact"><input type="number" placeholder="R$" data-mv min="0" step="50"><button class="mini" data-madd="${g.id}">+ Guardar</button><button class="mini ghost" data-msub="${g.id}">− Retirar</button><button class="mini ghost" data-mdel="${g.id}" style="margin-left:auto;color:var(--red)">Excluir</button></div></div>`;
   }).join(""); }
 
 function renderHist(){ const grid=document.getElementById("histGrid"),emp=document.getElementById("histEmpty");
