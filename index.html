@@ -779,7 +779,7 @@
         <input id="leadName" name="name" type="text" class="modal-input" placeholder="Seu nome" autocomplete="name" required />
       </div>
       <div>
-        <input id="leadPhone" name="whatsapp" type="tel" inputmode="numeric" class="modal-input" placeholder="Seu WhatsApp com DDD — ex: (11) 99999-9999" autocomplete="tel" required />
+        <input id="leadPhone" name="whatsapp" type="tel" inputmode="numeric" maxlength="16" class="modal-input" placeholder="Seu WhatsApp com DDD — ex: (11) 99999-9999" autocomplete="tel" required />
       </div>
       <p id="leadError" class="text-xs text-alert font-semibold" style="display:none">Confira seu nome e WhatsApp (com DDD) para continuar.</p>
       <button type="submit"
@@ -849,6 +849,15 @@
 
     const onlyDigits = v => (v || '').replace(/\D/g, '');
     const isPhone = v => { const d = onlyDigits(v); return d.length >= 10 && d.length <= 13; };
+
+    // Máscara de WhatsApp: (DD) XXXXX-XXXX
+    function maskPhone(v){
+      const d = onlyDigits(v).slice(0, 11);
+      if (d.length <= 2) return d ? '(' + d : '';
+      if (d.length <= 7) return '(' + d.slice(0,2) + ') ' + d.slice(2);
+      return '(' + d.slice(0,2) + ') ' + d.slice(2,7) + '-' + d.slice(7);
+    }
+    phoneEl.addEventListener('input', function(){ phoneEl.value = maskPhone(phoneEl.value); });
 
     form.addEventListener('submit', function(e){
       e.preventDefault();
