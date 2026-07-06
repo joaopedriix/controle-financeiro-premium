@@ -779,9 +779,9 @@
         <input id="leadName" name="name" type="text" class="modal-input" placeholder="Seu nome" autocomplete="name" required />
       </div>
       <div>
-        <input id="leadEmail" name="email" type="email" class="modal-input" placeholder="Seu melhor e-mail" autocomplete="email" required />
+        <input id="leadPhone" name="whatsapp" type="tel" inputmode="numeric" class="modal-input" placeholder="Seu WhatsApp com DDD — ex: (11) 99999-9999" autocomplete="tel" required />
       </div>
-      <p id="leadError" class="text-xs text-alert font-semibold" style="display:none">Confira seu nome e e-mail para continuar.</p>
+      <p id="leadError" class="text-xs text-alert font-semibold" style="display:none">Confira seu nome e WhatsApp (com DDD) para continuar.</p>
       <button type="submit"
         class="cta-press w-full inline-flex items-center justify-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-6 py-4 shadow-card transition">
         Ir para o pagamento seguro →
@@ -822,7 +822,7 @@
     const modal   = document.getElementById('checkoutModal');
     const form    = document.getElementById('leadForm');
     const nameEl  = document.getElementById('leadName');
-    const emailEl = document.getElementById('leadEmail');
+    const phoneEl = document.getElementById('leadPhone');
     const errEl   = document.getElementById('leadError');
     let lastFocus = null;
 
@@ -847,22 +847,23 @@
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
 
-    const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    const onlyDigits = v => (v || '').replace(/\D/g, '');
+    const isPhone = v => { const d = onlyDigits(v); return d.length >= 10 && d.length <= 13; };
 
     form.addEventListener('submit', function(e){
       e.preventDefault();
       const name  = nameEl.value.trim();
-      const email = emailEl.value.trim();
+      const whatsapp = phoneEl.value.trim();
       const okName = name.length >= 2;
-      const okMail = isEmail(email);
+      const okPhone = isPhone(whatsapp);
 
       nameEl.classList.toggle('err', !okName);
-      emailEl.classList.toggle('err', !okMail);
-      if (!okName || !okMail){ errEl.style.display = 'block'; return; }
+      phoneEl.classList.toggle('err', !okPhone);
+      if (!okName || !okPhone){ errEl.style.display = 'block'; return; }
       errEl.style.display = 'none';
 
       // Salva o lead (backup no navegador + webhook opcional)
-      const lead = { name, email, ts: new Date().toISOString(), origem: 'landing-planilha' };
+      const lead = { name, whatsapp, ts: new Date().toISOString(), origem: 'landing-planilha' };
       try {
         const arr = JSON.parse(localStorage.getItem('leads_cfp') || '[]');
         arr.push(lead); localStorage.setItem('leads_cfp', JSON.stringify(arr));
@@ -872,10 +873,10 @@
         try { fetch(LEAD_WEBHOOK, { method:'POST', mode:'no-cors', body: JSON.stringify(lead) }); } catch(_){}
       }
 
-      // Monta o checkout da Hotmart já com nome e e-mail preenchidos
+      // Monta o checkout da Hotmart já com nome e WhatsApp preenchidos
       let url = LINK_HOTMART.planilha;
       const sep = url.includes('?') ? '&' : '?';
-      url += sep + 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email);
+      url += sep + 'name=' + encodeURIComponent(name) + '&phonenumber=' + encodeURIComponent(onlyDigits(whatsapp));
 
       const win = window.open(url, '_blank', 'noopener');
       if (!win) window.location.href = url;  // fallback se o popup for bloqueado
