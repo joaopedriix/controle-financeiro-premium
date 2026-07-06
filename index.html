@@ -3,9 +3,66 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Controle Financeiro Premium — Organize sua vida financeira em minutos</title>
+<title>Controle Financeiro Premium — Tenha controle total do seu dinheiro</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232E7D32'/%3E%3Crect x='24' y='54' width='13' height='22' rx='3' fill='%23ffffff'/%3E%3Crect x='44' y='40' width='13' height='36' rx='3' fill='%23ffffff'/%3E%3Crect x='64' y='28' width='13' height='48' rx='3' fill='%2393C47D'/%3E%3C/svg%3E" />
-<meta name="description" content="A planilha de controle financeiro pessoal no Google Sheets que organiza seu dinheiro automaticamente. Saiba quanto sobra, pare de se perder nas contas e realize suas metas." />
+<meta name="description" content="Pare de se perguntar para onde foi o seu dinheiro. A planilha Controle Financeiro Premium organiza salário, gastos e metas automaticamente no Google Sheets. Acesso imediato, 7 dias de garantia." />
+<meta name="theme-color" content="#2E7D32" />
+<link rel="canonical" href="https://controle-financeiro-premium-flax.vercel.app/" />
+<meta name="robots" content="index, follow" />
+
+<!-- ===================== OPEN GRAPH / REDES SOCIAIS ===================== -->
+<meta property="og:type" content="product" />
+<meta property="og:site_name" content="Controle Financeiro Premium" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="Tenha controle total do seu dinheiro e pare de se perguntar para onde ele foi." />
+<meta property="og:description" content="Organize suas finanças em poucos minutos por dia, acompanhe seus gastos automaticamente e comece a economizar sem complicação. Acesso imediato · 7 dias de garantia." />
+<meta property="og:url" content="https://controle-financeiro-premium-flax.vercel.app/" />
+<meta property="og:image" content="https://controle-financeiro-premium-flax.vercel.app/og-image.png" />
+<meta property="og:image:alt" content="Planilha Controle Financeiro Premium com dashboard e gráficos automáticos" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tenha controle total do seu dinheiro" />
+<meta name="twitter:description" content="A planilha que organiza seu salário, gastos e metas automaticamente. Acesso imediato e 7 dias de garantia." />
+<meta name="twitter:image" content="https://controle-financeiro-premium-flax.vercel.app/og-image.png" />
+
+
+<!-- ===================== SCHEMA.ORG — PRODUTO ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Controle Financeiro Premium — Planilha completa",
+  "image": "https://controle-financeiro-premium-flax.vercel.app/og-image.png",
+  "description": "Planilha de controle financeiro pessoal no Google Sheets que organiza salário, gastos e metas automaticamente, com dashboard anual, gráficos, controle de metas, reservas e alerta de crédito.",
+  "brand": { "@type": "Brand", "name": "Controle Financeiro Premium" },
+  "category": "Planilha de Finanças Pessoais",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://controle-financeiro-premium-flax.vercel.app/",
+    "priceCurrency": "BRL",
+    "price": "47.90",
+    "availability": "https://schema.org/InStock",
+    "priceValidUntil": "2026-12-31"
+  }
+}
+</script>
+
+<!-- ===================== SCHEMA.ORG — FAQ ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Funciona no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A planilha roda no app gratuito do Google Sheets no Android e no iPhone. Você lança um gasto na hora, em qualquer lugar." } },
+    { "@type": "Question", "name": "Preciso instalar algo?", "acceptedAnswer": { "@type": "Answer", "text": "Não. Funciona 100% no Google Sheets, que é gratuito. Basta fazer uma cópia para a sua conta e começar a usar." } },
+    { "@type": "Question", "name": "Recebo atualizações?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Sempre que a planilha for melhorada, você recebe a nova versão sem custo adicional." } },
+    { "@type": "Question", "name": "É vitalício?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Você paga uma única vez e o acesso é vitalício, sem mensalidade." } },
+    { "@type": "Question", "name": "Posso usar em mais de um dispositivo?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Como fica na sua conta Google, você acessa do computador, do celular e do tablet, tudo sincronizado." } },
+    { "@type": "Question", "name": "É fácil para iniciantes?", "acceptedAnswer": { "@type": "Answer", "text": "Muito. Você só preenche as células azuis (salário, gastos, metas). Todo o cálculo é automático, e ainda vem um guia passo a passo." } },
+    { "@type": "Question", "name": "Como recebo?", "acceptedAnswer": { "@type": "Answer", "text": "O acesso é imediato após a confirmação do pagamento na Hotmart. Você recebe o link para fazer sua própria cópia no Google Sheets." } },
+    { "@type": "Question", "name": "Tem suporte?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Em caso de dúvidas, você conta com suporte por e-mail para ajudar você a usar a planilha." } }
+  ]
+}
+</script>
 
 <!-- ============================================================= -->
 <!--  CONTROLE FINANCEIRO PREMIUM — LANDING PAGE                    -->
@@ -33,10 +90,90 @@
   .marquee { animation: marquee 22s linear infinite; }
   /* respiro p/ o botao fixo de compra nao cobrir o rodape no celular */
   @media (max-width:767px){ body{ padding-bottom:5.5rem; } }
+
+  /* ============================================================
+     MELHORIAS DE CONVERSÃO — componentes e microinterações novas
+     (usa as cores da marca via hex, sem depender do Tailwind)
+     Paleta: brand #2E7D32 · forest #1E6B2E · leaf #43A047
+             grass #6AA84F · sage #93C47D · mint #D9EAD3
+             gold #F2A007 · alert #CC4125 · cream #F3F8F0
+     ============================================================ */
+
+  /* Fade-in ao rolar — SEMPRE visível por padrão (fallback sem JS).
+     Só anima quando o JS marca <html class="js"> e o elemento .fade-up. */
+  .js .fade-up{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .js .fade-up.in-view{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){
+    .js .fade-up{ opacity:1 !important; transform:none !important; transition:none !important; }
+    .floaty,.pulse-cta{ animation:none !important; }  /* marquee segue rolando sempre */
+  }
+
+  /* Hover suave em cards */
+  .lift{ transition: transform .25s ease, box-shadow .25s ease; }
+  .lift:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px -16px rgba(30,107,46,.35); }
+
+  /* Micro-hover nos botões de CTA */
+  .cta-press{ transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease; }
+  .cta-press:hover{ transform: translateY(-2px); }
+  .cta-press:active{ transform: translateY(0) scale(.98); }
+
+  /* Selos de confiança do hero */
+  .trust-chip{ display:inline-flex; align-items:center; gap:.4rem; background:#fff; border:1px solid #D9EAD3;
+    color:#1E6B2E; font-weight:700; font-size:.8rem; border-radius:9999px; padding:.4rem .8rem; box-shadow:0 4px 12px -8px rgba(30,107,46,.35); }
+
+  /* Barra de comparação de valor */
+  .value-row{ display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    background:#fff; border:1px solid #D9EAD3; border-radius:1rem; padding:1rem 1.25rem; }
+  .value-row.highlight{ background:#2E7D32; border-color:#2E7D32; color:#fff; box-shadow:0 14px 34px -14px rgba(30,107,46,.55); }
+  .value-price{ font-weight:800; font-size:1.15rem; white-space:nowrap; }
+
+  /* Estrelas dos depoimentos */
+  .stars{ color:#F2A007; letter-spacing:2px; font-size:1rem; }
+
+  /* Avatar placeholder (iniciais) — troque por foto quando tiver */
+  .avatar{ height:3rem; width:3rem; border-radius:9999px; display:flex; align-items:center; justify-content:center;
+    font-weight:800; color:#1E6B2E; background:#D9EAD3; flex-shrink:0; overflow:hidden; }
+  .avatar img{ height:100%; width:100%; object-fit:cover; }
+
+  /* Vídeo responsivo (facade — só carrega o iframe ao clicar = performance) */
+  .video-frame{ position:relative; width:100%; aspect-ratio:16/9; border-radius:1.25rem; overflow:hidden;
+    background:#1E6B2E; cursor:pointer; box-shadow:0 20px 50px -20px rgba(30,107,46,.5); }
+  .video-frame img,.video-frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; object-fit:cover; }
+  .video-frame .play{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:2; }
+  .video-frame .play span{ height:74px; width:74px; border-radius:9999px; background:rgba(255,255,255,.92);
+    display:flex; align-items:center; justify-content:center; color:#2E7D32; font-size:28px; padding-left:6px;
+    box-shadow:0 10px 30px -8px rgba(0,0,0,.4); transition:transform .2s ease; }
+  .video-frame:hover .play span{ transform:scale(1.08); }
+
+  /* Assinatura da criadora */
+  .signature{ font-family:'Segoe Script','Brush Script MT',cursive; font-size:1.6rem; color:#2E7D32; }
+
+  /* ===== Modal de checkout em 2 etapas ===== */
+  .modal-overlay{ position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center;
+    padding:1rem; background:rgba(15,23,42,.55); backdrop-filter:blur(3px); }
+  .modal-overlay.open{ display:flex; animation:overlayIn .25s ease; }
+  @keyframes overlayIn{ from{opacity:0} to{opacity:1} }
+  .modal-card{ width:100%; max-width:26rem; background:#fff; border-radius:1.5rem; padding:1.75rem;
+    box-shadow:0 30px 70px -20px rgba(0,0,0,.5); animation:cardIn .3s ease; }
+  @keyframes cardIn{ from{opacity:0; transform:translateY(18px) scale(.98)} to{opacity:1; transform:none} }
+  .modal-input{ width:100%; border:1.5px solid #D9EAD3; border-radius:.9rem; padding:.85rem 1rem; font-size:1rem;
+    color:#0f172a; outline:none; transition:border-color .2s ease, box-shadow .2s ease; }
+  .modal-input:focus{ border-color:#43A047; box-shadow:0 0 0 4px rgba(67,160,71,.15); }
+  .modal-input.err{ border-color:#CC4125; box-shadow:0 0 0 4px rgba(204,65,37,.12); }
+  .modal-close{ position:absolute; top:1rem; right:1rem; height:2rem; width:2rem; border-radius:9999px;
+    background:#F3F8F0; color:#64748b; display:flex; align-items:center; justify-content:center; font-size:1.1rem; }
+
+  /* CTAs e leitura maiores no mobile */
+  @media (max-width:640px){
+    .cta-press{ font-size:1.05rem !important; padding-top:1rem !important; padding-bottom:1rem !important; }
+    h1{ font-size:2.15rem !important; line-height:1.12 !important; }
+    .value-price{ font-size:1rem; }
+  }
 </style>
 </head>
 
 <body class="font-sans text-slate-800 bg-white antialiased">
+<script>document.documentElement.classList.add('js');</script>
 
 <!-- ===================== BARRA DE URGÊNCIA ===================== -->
 <div class="bg-forest text-white text-center text-sm py-2 px-4 font-medium">
@@ -53,11 +190,10 @@
     <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
       <a href="#beneficios" class="hover:text-brand transition">Benefícios</a>
       <a href="#recursos" class="hover:text-brand transition">O que faz</a>
-      <a href="#app" class="hover:text-brand transition">App</a>
-      <a href="#comprar" class="hover:text-brand transition">Preço</a>
+      <a href="#oferta" class="hover:text-brand transition">Preço</a>
     </div>
-    <a href="#comprar"
-       class="inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-bold text-sm px-5 py-2.5 shadow-soft transition">
+    <a href="#oferta" data-open-checkout
+       class="cta-press inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-bold text-sm px-5 py-2.5 shadow-soft transition">
        Quero a planilha
     </a>
   </nav>
@@ -76,27 +212,26 @@
         ✅ Funciona 100% no Google Sheets — sem instalar nada
       </span>
       <h1 class="text-4xl md:text-5xl lg:text-[3.3rem] font-extrabold leading-[1.08] text-slate-900">
-        Pare de se perder nas contas e finalmente
-        <span class="text-brand">saiba quanto sobra</span> todo mês.
+        Tenha controle total do seu dinheiro e pare de se perguntar
+        <span class="text-brand">para onde ele foi.</span>
       </h1>
       <p class="mt-5 text-lg text-slate-600 max-w-xl">
-        A <strong>Controle Financeiro Premium</strong> organiza seu salário, gastos e metas
-        <strong>automaticamente</strong>. Você só preenche as células azuis — o resto a planilha calcula sozinha,
-        com gráficos, saldo livre e alertas de crédito.
+        Organize suas finanças em <strong>poucos minutos por dia</strong>, acompanhe seus gastos
+        automaticamente e comece a <strong>economizar sem complicação</strong>. Você só preenche —
+        a planilha calcula, mostra em gráficos e avisa quando o cartão vai apertar.
       </p>
 
-      <!-- mini provas -->
-      <ul class="mt-6 grid sm:grid-cols-2 gap-3 text-sm font-medium text-slate-700">
-        <li class="flex items-center gap-2"><span class="text-leaf font-bold">✔</span> 12 meses prontos + Dashboard anual</li>
-        <li class="flex items-center gap-2"><span class="text-leaf font-bold">✔</span> Cálculos e gráficos automáticos</li>
-        <li class="flex items-center gap-2"><span class="text-leaf font-bold">✔</span> Metas e reserva de emergência</li>
-        <li class="flex items-center gap-2"><span class="text-leaf font-bold">✔</span> Acesse do PC ou do celular</li>
-      </ul>
+      <!-- selos de confiança -->
+      <div class="mt-6 flex flex-wrap gap-2.5">
+        <span class="trust-chip">✅ Mais de 15 recursos automáticos</span>
+        <span class="trust-chip">✅ Funciona no celular e no computador</span>
+        <span class="trust-chip">✅ Acesso imediato</span>
+      </div>
 
       <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <a href="#comprar"
-           class="pulse-cta inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-8 py-4 shadow-card transition">
-           Quero organizar minhas finanças →
+        <a href="#oferta" data-open-checkout
+           class="pulse-cta cta-press inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-8 py-4 shadow-card transition">
+           Quero ter controle do meu dinheiro →
         </a>
         <div class="text-sm">
           <div class="font-bold text-slate-900">R$ 47,90 <span class="text-slate-400 line-through font-normal">R$ 97,00</span></div>
@@ -104,10 +239,10 @@
         </div>
       </div>
 
-      <div class="mt-6 flex items-center gap-4 text-xs text-slate-500">
-        <span class="flex items-center gap-1">🔒 Compra segura Hotmart</span>
-        <span class="flex items-center gap-1">⭐ 7 dias de garantia</span>
+      <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500">
+        <span class="flex items-center gap-1">🔒 Compra 100% segura</span>
         <span class="flex items-center gap-1">⚡ Acesso imediato</span>
+        <span class="flex items-center gap-1">🛡️ Garantia de 7 dias</span>
       </div>
     </div>
 
@@ -246,35 +381,35 @@
 
     <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- card -->
-      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
-        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">⚡</div>
-        <h3 class="font-bold text-lg text-slate-900">Tudo automático</h3>
-        <p class="mt-2 text-sm text-slate-600">Saldo, totais e gráficos se atualizam sozinhos. Preencheu, calculou. Sem fórmula manual.</p>
-      </div>
-      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
-        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">🔄</div>
-        <h3 class="font-bold text-lg text-slate-900">Rendas e fixos se repetem</h3>
-        <p class="mt-2 text-sm text-slate-600">Cadastrou o salário e as contas fixas uma vez? Elas voltam todo mês. Chega de redigitar.</p>
-      </div>
-      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
+      <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint">
         <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">📊</div>
-        <h3 class="font-bold text-lg text-slate-900">Dashboard anual</h3>
-        <p class="mt-2 text-sm text-slate-600">Veja o ano inteiro num só lugar: entradas, gastos e saldo mês a mês, com gráficos prontos.</p>
+        <h3 class="font-bold text-lg text-slate-900">Veja em segundos para onde seu dinheiro está indo</h3>
+        <p class="mt-2 text-sm text-slate-600">Sem abrir dezenas de abas: um único painel mostra quanto entrou, quanto saiu e quanto sobra — atualizado sozinho.</p>
       </div>
-      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
-        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">🎯</div>
-        <h3 class="font-bold text-lg text-slate-900">Metas com progresso</h3>
-        <p class="mt-2 text-sm text-slate-600">Defina objetivos e acompanhe a % concluída e a reserva de emergência crescendo.</p>
-      </div>
-      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
+      <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint">
         <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">🚨</div>
-        <h3 class="font-bold text-lg text-slate-900">Alerta de crédito</h3>
-        <p class="mt-2 text-sm text-slate-600">A planilha avisa quando o cartão pode estourar o próximo mês. Você nunca mais é pego de surpresa.</p>
+        <h3 class="font-bold text-lg text-slate-900">Nunca mais seja surpreendido pela fatura do cartão</h3>
+        <p class="mt-2 text-sm text-slate-600">A planilha avisa quando o cartão pode estourar o próximo mês. Você se antecipa e dorme tranquilo.</p>
       </div>
-      <div class="reveal bg-white rounded-2xl p-6 shadow-soft border border-mint">
+      <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint">
+        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">⚡</div>
+        <h3 class="font-bold text-lg text-slate-900">Chega de fazer conta na mão todo mês</h3>
+        <p class="mt-2 text-sm text-slate-600">Você só preenche as células azuis. Saldo, totais e gráficos se calculam sozinhos — sem fórmula, sem esforço.</p>
+      </div>
+      <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint">
+        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">🎯</div>
+        <h3 class="font-bold text-lg text-slate-900">Veja suas metas saírem do papel de verdade</h3>
+        <p class="mt-2 text-sm text-slate-600">Reserva de emergência, viagem, quitar dívidas: acompanhe a % concluída crescer e sinta o progresso a cada mês.</p>
+      </div>
+      <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint">
+        <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">🔄</div>
+        <h3 class="font-bold text-lg text-slate-900">Preencha uma vez e esqueça a digitação</h3>
+        <p class="mt-2 text-sm text-slate-600">Salário e contas fixas se repetem automaticamente todo mês. Você cadastra uma vez e ganha tempo para sempre.</p>
+      </div>
+      <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint">
         <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">📱</div>
-        <h3 class="font-bold text-lg text-slate-900">PC e celular</h3>
-        <p class="mt-2 text-sm text-slate-600">Roda no Google Sheets grátis. Lance um gasto na hora pelo celular, em qualquer lugar.</p>
+        <h3 class="font-bold text-lg text-slate-900">Registre um gasto na hora, de onde estiver</h3>
+        <p class="mt-2 text-sm text-slate-600">Roda no Google Sheets grátis, no PC e no celular. Gastou? Lança em segundos e nunca mais esquece.</p>
       </div>
     </div>
   </div>
@@ -406,112 +541,42 @@
   </div>
 </section>
 
-<!-- ===================== UPSELL APP (PWA) ===================== -->
-<section id="app" class="py-20 bg-gradient-to-b from-white to-cream relative overflow-hidden">
-  <div class="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-sage/30 blur-3xl"></div>
-  <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative">
-    <!-- Mockup de celular -->
-    <div class="reveal flex justify-center order-2 lg:order-1">
-      <div class="floaty relative">
-        <!-- aparelho -->
-        <div class="w-[270px] h-[560px] rounded-[2.6rem] bg-slate-900 p-3 shadow-card">
-          <div class="w-full h-full rounded-[2.1rem] bg-cream overflow-hidden relative">
-            <!-- notch -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-32 bg-slate-900 rounded-b-2xl z-10"></div>
-            <!-- header app -->
-            <div class="bg-brand text-white pt-8 pb-5 px-4">
-              <div class="flex items-center justify-between">
-                <div>
-                  <div class="text-[10px] opacity-80">Olá, João 👋</div>
-                  <div class="text-sm font-bold">Junho 2026</div>
-                </div>
-                <span class="h-8 w-8 rounded-full bg-white/20 flex items-center justify-center">⚙️</span>
-              </div>
-              <div class="mt-4 rounded-xl bg-white/10 p-3">
-                <div class="text-[10px] opacity-80">Saldo livre</div>
-                <div class="text-2xl font-extrabold">R$ 8.120,00</div>
-                <div class="text-[10px] text-sage">▲ 12% vs. mês anterior</div>
-              </div>
-            </div>
-            <!-- corpo -->
-            <div class="p-4 space-y-3">
-              <div class="flex gap-2">
-                <div class="flex-1 rounded-xl bg-white border border-mint p-2 text-center">
-                  <div class="text-[9px] text-grass font-bold">ENTRADAS</div>
-                  <div class="text-xs font-extrabold text-brand">R$ 9.200</div></div>
-                <div class="flex-1 rounded-xl bg-white border border-mint p-2 text-center">
-                  <div class="text-[9px] text-grass font-bold">GASTOS</div>
-                  <div class="text-xs font-extrabold text-alert">R$ 1.080</div></div>
-              </div>
-              <div class="rounded-xl bg-white border border-mint p-3">
-                <div class="flex justify-between items-center mb-2">
-                  <span class="text-[10px] font-bold text-slate-500">Por categoria</span>
-                  <span class="text-[9px] text-grass">ver tudo</span>
-                </div>
-                <div class="space-y-2">
-                  <div class="flex items-center gap-2"><span class="text-xs">🏠</span>
-                    <div class="flex-1 h-2 rounded bg-sage" style="width:90%"></div></div>
-                  <div class="flex items-center gap-2"><span class="text-xs">🛒</span>
-                    <div class="flex-1 h-2 rounded bg-grass" style="width:70%"></div></div>
-                  <div class="flex items-center gap-2"><span class="text-xs">⛽</span>
-                    <div class="flex-1 h-2 rounded bg-brand" style="width:45%"></div></div>
-                </div>
-              </div>
-              <button class="w-full rounded-xl bg-leaf text-white text-xs font-bold py-2.5">+ Lançar gasto</button>
-            </div>
-            <!-- tab bar -->
-            <div class="absolute bottom-0 inset-x-0 bg-white border-t border-mint flex justify-around py-2 text-lg">
-              <span>🏠</span><span>📊</span><span class="text-brand">➕</span><span>🎯</span><span>👤</span>
-            </div>
-          </div>
-        </div>
-        <!-- selo -->
-        <div class="absolute -top-3 -right-3 rotate-6 rounded-full bg-gold text-forest text-xs font-extrabold px-3 py-2 shadow-soft">
-          EM BREVE
-        </div>
+<!-- ===================== REFORÇO DE VALOR ===================== -->
+<section class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="text-center fade-up mb-10">
+      <span class="text-sm font-bold uppercase tracking-wider text-brand">Coloque na balança</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Quanto vale ter controle financeiro?</h2>
+      <p class="mt-4 text-lg text-slate-600">Compare com coisas que somem do seu extrato sem você nem perceber:</p>
+    </div>
+
+    <div class="fade-up space-y-3">
+      <div class="value-row">
+        <span class="flex items-center gap-3 text-slate-700 font-semibold"><span class="text-2xl">🍕</span> Um pedido de pizza</span>
+        <span class="value-price text-slate-500">R$ 60,00</span>
+      </div>
+      <div class="value-row">
+        <span class="flex items-center gap-3 text-slate-700 font-semibold"><span class="text-2xl">🛍️</span> Uma ida ao shopping</span>
+        <span class="value-price text-slate-500">R$ 150,00</span>
+      </div>
+      <div class="value-row">
+        <span class="flex items-center gap-3 text-slate-700 font-semibold"><span class="text-2xl">💸</span> Uma compra por impulso</span>
+        <span class="value-price text-slate-500">R$ 200,00</span>
+      </div>
+      <div class="value-row highlight">
+        <span class="flex items-center gap-3 font-extrabold"><span class="text-2xl">📊</span> Controle Financeiro Premium</span>
+        <span class="value-price">R$ 47,90</span>
       </div>
     </div>
 
-    <!-- Texto upsell -->
-    <div class="reveal order-1 lg:order-2">
-      <span class="inline-flex items-center gap-2 rounded-full bg-gold/20 text-gold-700 text-xs font-bold px-4 py-1.5 mb-4" style="color:#9a6700">
-        ⭐ Upgrade opcional
-      </span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
-        Leve seu controle para o <span class="text-brand">aplicativo no celular</span>
-      </h2>
-      <p class="mt-4 text-lg text-slate-600">
-        O app (PWA) transforma a sua planilha numa experiência de aplicativo: instala na tela inicial,
-        abre em 1 toque e lança gastos na hora — sem abrir o Sheets, sem rolar célula.
+    <div class="fade-up mt-8 text-center rounded-2xl bg-cream border border-mint p-6">
+      <p class="text-lg md:text-xl font-semibold text-slate-800">
+        Se ela ajudar você a economizar apenas <span class="text-brand">R$ 50 no primeiro mês</span>,
+        ela praticamente se paga sozinha.
       </p>
-      <ul class="mt-6 space-y-3 text-slate-700">
-        <li class="flex gap-3"><span class="h-6 w-6 shrink-0 rounded-full bg-mint text-brand flex items-center justify-center text-sm">✔</span> Instala como app no Android e iPhone — sem loja de apps</li>
-        <li class="flex gap-3"><span class="h-6 w-6 shrink-0 rounded-full bg-mint text-brand flex items-center justify-center text-sm">✔</span> Lançamento de gastos em segundos, na hora da compra</li>
-        <li class="flex gap-3"><span class="h-6 w-6 shrink-0 rounded-full bg-mint text-brand flex items-center justify-center text-sm">✔</span> Dashboard e metas na palma da mão</li>
-        <li class="flex gap-3"><span class="h-6 w-6 shrink-0 rounded-full bg-mint text-brand flex items-center justify-center text-sm">✔</span> Funciona offline e sincroniza depois</li>
-      </ul>
-
-      <div class="mt-8 rounded-2xl border-2 border-gold/40 bg-white p-6 shadow-soft">
-        <div class="flex items-end justify-between flex-wrap gap-4">
-          <div>
-            <div class="text-sm text-slate-500">App Mobile (PWA)</div>
-            <div class="text-3xl font-extrabold text-slate-900">R$ 347,90</div>
-            <div class="text-xs text-slate-500">acesso vitalício · atualizações incluídas</div>
-          </div>
-          <!-- App ainda nao lancado. Quando criar o produto na Hotmart, troque este
-               <span> por: <a href="LINK_DO_CHECKOUT_DO_APP" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2 rounded-full bg-forest hover:bg-brand text-white font-bold px-6 py-3.5 shadow-soft transition">Quero o app &rarr;</a> -->
-          <span aria-disabled="true"
-             class="inline-flex items-center gap-2 rounded-full bg-slate-200 text-slate-500 font-bold px-6 py-3.5 cursor-not-allowed select-none">
-             Em breve
-          </span>
-        </div>
-      </div>
-      <p class="mt-3 text-xs text-slate-500">💡 Lançamento em breve — quem comprar a planilha terá uma oferta especial.</p>
     </div>
   </div>
 </section>
-
 
 <!-- ===================== OFERTA / PREÇO ===================== -->
 <section id="oferta" class="py-20 bg-cream">
@@ -534,20 +599,25 @@
           <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Acesso imediato e vitalício no Google Sheets</li>
         </ul>
 
-        <div id="comprar" style="scroll-margin-top:88px" class="mt-8 text-center">
+        <div class="mt-8 text-center">
           <div class="text-slate-400 line-through">de R$ 97,00</div>
           <div class="text-5xl font-extrabold text-brand">R$ 47,90</div>
           <div class="text-sm text-slate-500">à vista ou em até 4x na Hotmart</div>
         </div>
 
+        <!-- barra de urgência discreta e honesta (sem contador falso) -->
+        <div class="mt-8 flex items-center justify-center gap-2 rounded-full bg-gold/20 text-forest text-sm font-semibold px-4 py-2">
+          🔥 Aproveite o preço promocional de lançamento enquanto está disponível
+        </div>
+
         <!-- Checkout da planilha na Hotmart -->
-        <a href="https://pay.hotmart.com/J105830027G" target="_blank" rel="noopener" data-checkout="planilha"
-           class="pulse-cta mt-8 w-full inline-flex items-center justify-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-8 py-5 shadow-card transition">
-           👉 Comprar agora na Hotmart
+        <a href="https://pay.hotmart.com/J105830027G" target="_blank" rel="noopener" data-checkout="planilha" data-open-checkout
+           class="pulse-cta cta-press mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-8 py-5 shadow-card transition">
+           Quero organizar minha vida financeira →
         </a>
 
-        <div class="mt-5 flex items-center justify-center gap-5 text-xs text-slate-500">
-          <span>🔒 Pagamento seguro</span><span>⚡ Acesso imediato</span><span>⭐ Garantia 7 dias</span>
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs text-slate-500">
+          <span>🔒 Compra 100% segura</span><span>⚡ Acesso imediato</span><span>🛡️ Garantia de 7 dias</span>
         </div>
       </div>
     </div>
@@ -556,19 +626,38 @@
 
 <!-- ===================== GARANTIA ===================== -->
 <section class="py-16 bg-white">
-  <div class="max-w-3xl mx-auto px-4 reveal">
-    <div class="rounded-3xl border-2 border-mint bg-cream p-8 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
-      <div class="shrink-0">
-        <div class="h-24 w-24 rounded-full bg-brand text-white flex flex-col items-center justify-center shadow-card">
-          <span class="text-2xl font-extrabold leading-none">7</span>
-          <span class="text-[10px] font-bold">DIAS</span>
+  <div class="max-w-3xl mx-auto px-4 fade-up">
+    <div class="rounded-3xl border-2 border-mint bg-cream p-8 shadow-soft">
+      <div class="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+        <div class="shrink-0">
+          <div class="h-28 w-28 rounded-full bg-brand text-white flex flex-col items-center justify-center shadow-card">
+            <span class="text-3xl font-extrabold leading-none">7</span>
+            <span class="text-[11px] font-bold tracking-wider">DIAS</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900">Você não corre nenhum risco.</h3>
+          <p class="mt-2 text-slate-600">Teste a planilha por 7 dias. Se por qualquer motivo ela não for pra você,
+            é só pedir o reembolso dentro do prazo pela Hotmart e devolvemos <strong>100% do seu dinheiro</strong>.
+            O risco é todo nosso — a decisão é toda sua.</p>
         </div>
       </div>
-      <div>
-        <h3 class="text-2xl font-extrabold text-slate-900">Garantia incondicional de 7 dias</h3>
-        <p class="mt-2 text-slate-600">Use a planilha por uma semana inteira. Se por qualquer motivo ela não for pra você,
-          é só pedir o reembolso dentro do prazo pela Hotmart e devolvemos <strong>100% do seu dinheiro</strong>.
-          O risco é todo nosso.</p>
+      <div class="mt-6 pt-6 border-t border-mint grid sm:grid-cols-3 gap-4 text-center">
+        <div class="flex flex-col items-center gap-1">
+          <div class="h-10 w-10 rounded-full bg-mint text-brand flex items-center justify-center text-xl">🛡️</div>
+          <span class="text-sm font-bold text-slate-800">Reembolso garantido</span>
+          <span class="text-xs text-slate-500">100% do valor, sem burocracia</span>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <div class="h-10 w-10 rounded-full bg-mint text-brand flex items-center justify-center text-xl">🔒</div>
+          <span class="text-sm font-bold text-slate-800">Pagamento seguro</span>
+          <span class="text-xs text-slate-500">Processado pela Hotmart</span>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <div class="h-10 w-10 rounded-full bg-mint text-brand flex items-center justify-center text-xl">⚡</div>
+          <span class="text-sm font-bold text-slate-800">Acesso imediato</span>
+          <span class="text-xs text-slate-500">Liberado após a compra</span>
+        </div>
       </div>
     </div>
   </div>
@@ -583,35 +672,59 @@
     </div>
 
     <div class="space-y-3">
-      <details class="reveal group rounded-xl border border-mint bg-white p-5">
-        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
-          Preciso saber usar Excel ou planilhas? <span class="text-brand group-open:rotate-45 transition">+</span>
-        </summary>
-        <p class="mt-3 text-slate-600 text-sm">Não. Você só preenche as células azuis (salário, gastos, metas). Todo o cálculo é automático.</p>
-      </details>
-      <details class="reveal group rounded-xl border border-mint bg-white p-5">
+      <details class="fade-up group rounded-xl border border-mint bg-white p-5">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
           Funciona no celular? <span class="text-brand group-open:rotate-45 transition">+</span>
         </summary>
-        <p class="mt-3 text-slate-600 text-sm">Sim. Roda no app gratuito do Google Sheets no Android e iPhone. Para uma experiência de aplicativo de verdade, há o upgrade do app (PWA).</p>
+        <p class="mt-3 text-slate-600 text-sm">Sim. A planilha roda no app gratuito do Google Sheets no Android e no iPhone. Você lança um gasto na hora, em qualquer lugar.</p>
       </details>
-      <details class="reveal group rounded-xl border border-mint bg-white p-5">
+      <details class="fade-up group rounded-xl border border-mint bg-white p-5">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
-          Como recebo a planilha depois de comprar? <span class="text-brand group-open:rotate-45 transition">+</span>
+          Preciso instalar algo? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">Não. Funciona 100% no Google Sheets, que é gratuito. Basta fazer uma cópia para a sua conta e começar a usar.</p>
+      </details>
+      <details class="fade-up group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          Recebo atualizações? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">Sim. Sempre que a planilha for melhorada, você recebe a nova versão sem custo adicional.</p>
+      </details>
+      <details class="fade-up group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          É vitalício? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">Sim. Você paga uma única vez e o acesso é vitalício, sem mensalidade. O Google Sheets também é gratuito.</p>
+      </details>
+      <details class="fade-up group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          Posso usar em mais de um dispositivo? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">Sim. Como fica na sua conta Google, você acessa do computador, do celular e do tablet, tudo sincronizado.</p>
+      </details>
+      <details class="fade-up group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          É fácil para iniciantes? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">Muito. Você só preenche as células azuis (salário, gastos, metas). Todo o cálculo é automático, e ainda vem um guia passo a passo.</p>
+      </details>
+      <details class="fade-up group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          Como recebo? <span class="text-brand group-open:rotate-45 transition">+</span>
         </summary>
         <p class="mt-3 text-slate-600 text-sm">O acesso é imediato após a confirmação do pagamento na Hotmart. Você recebe o link para fazer sua própria cópia no Google Sheets.</p>
       </details>
-      <details class="reveal group rounded-xl border border-mint bg-white p-5">
+      <details class="fade-up group rounded-xl border border-mint bg-white p-5">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
-          Preciso pagar mensalidade? <span class="text-brand group-open:rotate-45 transition">+</span>
+          Tem suporte? <span class="text-brand group-open:rotate-45 transition">+</span>
         </summary>
-        <p class="mt-3 text-slate-600 text-sm">Não. Você paga uma vez e o acesso é vitalício. O Google Sheets também é gratuito.</p>
+        <p class="mt-3 text-slate-600 text-sm">Sim. Em caso de dúvidas, você conta com suporte por e-mail para ajudar você a usar a planilha.</p>
       </details>
-      <details class="reveal group rounded-xl border border-mint bg-white p-5">
+      <details class="fade-up group rounded-xl border border-mint bg-white p-5">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
           E se eu não gostar? <span class="text-brand group-open:rotate-45 transition">+</span>
         </summary>
-        <p class="mt-3 text-slate-600 text-sm">Você tem 7 dias de garantia. Se não for pra você, pede reembolso pela Hotmart e recebe tudo de volta.</p>
+        <p class="mt-3 text-slate-600 text-sm">Você tem 7 dias de garantia. Se não for pra você, pede reembolso pela Hotmart e recebe 100% de volta.</p>
       </details>
     </div>
   </div>
@@ -622,11 +735,11 @@
   <div class="max-w-2xl mx-auto px-4 reveal">
     <h2 class="text-3xl md:text-4xl font-extrabold">O próximo mês pode ser diferente.</h2>
     <p class="mt-4 text-lg text-white/80">Em poucos minutos você instala a clareza que faltava nas suas finanças. Por menos do que um delivery.</p>
-    <a href="#comprar"
-       class="mt-8 inline-flex items-center gap-2 rounded-full bg-gold hover:brightness-95 text-forest font-extrabold text-lg px-10 py-5 shadow-card transition">
-       Quero minha planilha por R$ 47,90 →
+    <a href="#oferta" data-open-checkout
+       class="cta-press mt-8 inline-flex items-center gap-2 rounded-full bg-gold hover:brightness-95 text-forest font-extrabold text-lg px-10 py-5 shadow-card transition">
+       Quero ter controle do meu dinheiro por R$ 47,90 →
     </a>
-    <div class="mt-5 text-sm text-white/70">🔒 Compra segura · ⭐ 7 dias de garantia · ⚡ Acesso imediato</div>
+    <div class="mt-5 text-sm text-white/70">🔒 Compra 100% segura · 🛡️ 7 dias de garantia · ⚡ Acesso imediato</div>
   </div>
 </section>
 
@@ -645,25 +758,145 @@
 </footer>
 
 <!-- ===================== BOTÃO FLUTUANTE (MOBILE) ===================== -->
-<a href="#comprar"
+<a href="#oferta" data-open-checkout
    class="md:hidden fixed bottom-4 inset-x-4 z-50 inline-flex items-center justify-center gap-2 rounded-full bg-leaf text-white font-extrabold py-4 shadow-card">
-   Comprar por R$ 47,90 →
+   Quero minha planilha · R$ 47,90 →
 </a>
+
+<!-- ===================== MODAL DE CHECKOUT EM 2 ETAPAS ===================== -->
+<!-- Pede nome + e-mail antes de mandar para a Hotmart. Se a pessoa desistir
+     no checkout, você já tem o lead para recuperar depois. -->
+<div id="checkoutModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card relative">
+    <button type="button" class="modal-close" data-close-modal aria-label="Fechar">✕</button>
+    <div class="text-center">
+      <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-mint text-2xl mb-3">📊</div>
+      <h3 id="modalTitle" class="text-xl font-extrabold text-slate-900">Falta só um passo</h3>
+      <p class="mt-1 text-sm text-slate-600">Preencha para liberar seu acesso e ir ao pagamento seguro.</p>
+    </div>
+    <form id="leadForm" class="mt-5 space-y-3" novalidate>
+      <div>
+        <input id="leadName" name="name" type="text" class="modal-input" placeholder="Seu nome" autocomplete="name" required />
+      </div>
+      <div>
+        <input id="leadEmail" name="email" type="email" class="modal-input" placeholder="Seu melhor e-mail" autocomplete="email" required />
+      </div>
+      <p id="leadError" class="text-xs text-alert font-semibold" style="display:none">Confira seu nome e e-mail para continuar.</p>
+      <button type="submit"
+        class="cta-press w-full inline-flex items-center justify-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-6 py-4 shadow-card transition">
+        Ir para o pagamento seguro →
+      </button>
+    </form>
+    <div class="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11px] text-slate-500">
+      <span>🔒 Compra 100% segura</span><span>⚡ Acesso imediato</span><span>🛡️ Garantia de 7 dias</span>
+    </div>
+    <p class="mt-3 text-center text-[11px] text-slate-400">Seus dados são usados apenas para liberar seu acesso.</p>
+  </div>
+</div>
 
 <script>
   /* ============================================================
-     LINKS DA HOTMART
-     Cole aqui os links de checkout. Assim que preencher, os
-     botões passam a abrir o checkout em nova aba automaticamente.
+     1) LINKS DA HOTMART
      ============================================================ */
   const LINK_HOTMART = {
     planilha: "https://pay.hotmart.com/J105830027G",  // checkout da PLANILHA (R$ 47,90)
-    app:      ""   // <-- APP PWA (R$ 347,90) ainda nao criado na Hotmart; cole o checkout quando existir
+    app:      ""   // APP PWA (R$ 347,90) ainda nao criado; cole o checkout quando existir
   };
+
+  /* Destino dos leads capturados no modal → Planilha Google (via Apps Script).
+     Cole abaixo a URL do "App da Web" gerada no deploy do Apps Script
+     (ver arquivo webhook-google-sheets.gs). Enquanto estiver "", o lead
+     fica salvo apenas no navegador do visitante. */
+  const LEAD_WEBHOOK = "";
+
+  /* Aplica os links diretos (fallback sem modal / sem JS de modal) */
   document.querySelectorAll('[data-checkout]').forEach(btn => {
     const url = LINK_HOTMART[btn.getAttribute('data-checkout')];
     if (url) { btn.setAttribute('href', url); btn.setAttribute('target', '_blank'); btn.setAttribute('rel', 'noopener'); }
   });
+
+  /* ============================================================
+     2) CHECKOUT EM 2 ETAPAS (modal de captura de lead)
+     ============================================================ */
+  (function(){
+    const modal   = document.getElementById('checkoutModal');
+    const form    = document.getElementById('leadForm');
+    const nameEl  = document.getElementById('leadName');
+    const emailEl = document.getElementById('leadEmail');
+    const errEl   = document.getElementById('leadError');
+    let lastFocus = null;
+
+    function openModal(e){
+      if (e) e.preventDefault();
+      lastFocus = document.activeElement;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(()=> nameEl.focus(), 60);
+    }
+    function closeModal(){
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    }
+
+    // Abre o modal em qualquer botão marcado com data-open-checkout
+    document.querySelectorAll('[data-open-checkout]').forEach(btn => btn.addEventListener('click', openModal));
+
+    // Fechar: botão X, clique no fundo, tecla ESC
+    modal.querySelectorAll('[data-close-modal]').forEach(b => b.addEventListener('click', closeModal));
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+
+    const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const name  = nameEl.value.trim();
+      const email = emailEl.value.trim();
+      const okName = name.length >= 2;
+      const okMail = isEmail(email);
+
+      nameEl.classList.toggle('err', !okName);
+      emailEl.classList.toggle('err', !okMail);
+      if (!okName || !okMail){ errEl.style.display = 'block'; return; }
+      errEl.style.display = 'none';
+
+      // Salva o lead (backup no navegador + webhook opcional)
+      const lead = { name, email, ts: new Date().toISOString(), origem: 'landing-planilha' };
+      try {
+        const arr = JSON.parse(localStorage.getItem('leads_cfp') || '[]');
+        arr.push(lead); localStorage.setItem('leads_cfp', JSON.stringify(arr));
+      } catch(_){}
+      if (LEAD_WEBHOOK){
+        // no-cors + corpo texto: compatível com o App da Web do Google Apps Script
+        try { fetch(LEAD_WEBHOOK, { method:'POST', mode:'no-cors', body: JSON.stringify(lead) }); } catch(_){}
+      }
+
+      // Monta o checkout da Hotmart já com nome e e-mail preenchidos
+      let url = LINK_HOTMART.planilha;
+      const sep = url.includes('?') ? '&' : '?';
+      url += sep + 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email);
+
+      const win = window.open(url, '_blank', 'noopener');
+      if (!win) window.location.href = url;  // fallback se o popup for bloqueado
+      closeModal();
+    });
+  })();
+
+  /* ============================================================
+     3) ANIMAÇÕES DE ENTRADA (fade-in ao rolar) — progressivas
+     ============================================================ */
+  document.documentElement.classList.add('js');
+  (function(){
+    const els = document.querySelectorAll('.fade-up');
+    if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in-view')); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in-view'); io.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => io.observe(el));
+  })();
 </script>
+<!-- Vercel Web Analytics (site estático: basta ativar Analytics no projeto da Vercel) -->
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
