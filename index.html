@@ -193,7 +193,7 @@
       <a href="#oferta" class="hover:text-brand transition">Preço</a>
     </div>
     <a href="#oferta" data-open-checkout
-       class="cta-press inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-bold text-sm px-5 py-2.5 shadow-soft transition">
+       class="cta-press hidden sm:inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-bold text-sm px-5 py-2.5 shadow-soft transition">
        Quero a planilha
     </a>
   </nav>
@@ -524,6 +524,102 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VÍDEO + QUEM SOU EU ===================== -->
+<section id="video" class="py-20 bg-cream relative overflow-hidden">
+  <div class="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-sage/30 blur-3xl"></div>
+  <div class="max-w-6xl mx-auto px-4 relative">
+
+    <!-- Cabeçalho da seção -->
+    <div class="text-center reveal mb-12">
+      <span class="text-sm font-bold uppercase tracking-wider text-brand">Prova real · Quem sou eu</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">
+        Veja a planilha funcionando — e <span class="text-brand">quem está por trás dela</span>
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Player em frame de celular (9:16) -->
+      <div class="reveal flex justify-center order-1 lg:order-1">
+        <div class="relative">
+          <div class="w-[270px] sm:w-[300px] rounded-[2.6rem] bg-slate-900 p-3 shadow-card">
+            <div class="rounded-[2.1rem] overflow-hidden bg-black" style="aspect-ratio:9/16">
+              <video
+                controls playsinline preload="none"
+                poster="video_instagram_poster.jpg"
+                class="w-full h-full"
+                style="object-fit:cover">
+                <source src="video_instagram.mp4" type="video/mp4" />
+                Seu navegador não suporta vídeo. Você pode
+                <a href="video_instagram.mp4" class="text-leaf underline">baixar o vídeo aqui</a>.
+              </video>
+            </div>
+          </div>
+          <!-- selo -->
+          <div class="absolute -top-3 -right-3 rotate-6 rounded-full bg-gold text-forest text-xs font-extrabold px-3 py-2 shadow-soft">
+            ▶ VÍDEO REAL
+          </div>
+        </div>
+      </div>
+
+      <!-- Card "Quem sou eu" -->
+      <div class="reveal order-2 lg:order-2">
+        <article class="rounded-3xl bg-white border border-mint shadow-card p-6 md:p-8" aria-labelledby="quem-sou-eu-titulo">
+          <!-- identidade -->
+          <div class="flex items-center gap-4">
+            <img src="autor_avatar.jpg" width="80" height="80" loading="lazy" decoding="async"
+                 alt="Foto de João, criador da Planilhas e Planners"
+                 class="h-20 w-20 rounded-full border-4 border-mint shadow-soft" style="object-fit:cover" />
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-brand">Por trás da planilha</span>
+              <h3 id="quem-sou-eu-titulo" class="text-xl font-extrabold text-slate-900">Quem sou eu</h3>
+            </div>
+          </div>
+
+          <p class="mt-6 text-slate-600">
+            Eu sou o criador por trás do perfil <strong>@juau.fcb</strong> e da <strong>Planilhas e Planners</strong>,
+            um projeto criado para ajudar você a organizar melhor a rotina, os planos e as metas — de forma
+            simples, prática e visual.
+          </p>
+          <p class="mt-3 text-slate-600">
+            Acredito que a organização não precisa ser complicada. Com as ferramentas certas, é possível
+            transformar tarefas em planos, ideias em objetivos e objetivos em resultados mais claros.
+          </p>
+          <p class="mt-3 text-slate-600">
+            Foi com esse propósito que nasceu o perfil @planilhaseplanners: para compartilhar planilhas,
+            planners e soluções que tornam o dia a dia mais produtivo e organizado.
+          </p>
+          <p class="mt-3 text-slate-600">
+            Seja bem-vindo(a)! Espero que você encontre aqui as ferramentas necessárias para deixar sua
+            rotina mais leve, planejada e sob controle.
+          </p>
+
+          <nav aria-label="Perfis do Instagram" class="mt-6 flex flex-col gap-3 border-t border-mint pt-5">
+            <div class="flex items-center justify-between gap-3">
+              <span class="text-sm text-slate-600">Criado por <strong class="text-slate-900">João</strong></span>
+              <a href="https://www.instagram.com/juau.fcb/" target="_blank" rel="noopener noreferrer"
+                 class="text-sm font-semibold text-brand hover:text-forest focus-visible:underline transition">@juau.fcb</a>
+            </div>
+            <div class="flex items-center justify-between gap-3">
+              <span class="text-sm text-slate-600">Conheça também o perfil da Planilha e Planners</span>
+              <a href="https://www.instagram.com/planilhaseplanners/" target="_blank" rel="noopener noreferrer"
+                 class="text-sm font-semibold text-brand hover:text-forest focus-visible:underline transition">@planilhaseplanners</a>
+            </div>
+          </nav>
+
+          <div class="mt-6">
+            <a href="https://www.instagram.com/planilhaseplanners/" target="_blank" rel="noopener noreferrer"
+               class="cta-press inline-flex items-center justify-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold px-7 py-3.5 shadow-card transition">
+               Acompanhar no Instagram →
+            </a>
+          </div>
+        </article>
+      </div>
+
     </div>
   </div>
 </section>
