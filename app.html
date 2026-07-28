@@ -5,7 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0b1712">
 <title>Controle Financeiro Premium</title>
+<link rel="manifest" href="manifest.json">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1f16'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%23FFC942' font-family='Arial' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Meu Controle">
 <style>
 :root{
   --bg:#0a1510; --bg2:#0d1c14; --card:#132318; --card2:#18301f; --raise:#1d3a26;
@@ -833,6 +839,10 @@ document.getElementById("confirmOk").onclick=()=>{ const cb=_confirmCb; closeCon
 document.getElementById("confirmOverlay").addEventListener("click",e=>{if(e.target.id==="confirmOverlay")closeConfirm();});
 
 setTipo("saida");
+
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>{ navigator.serviceWorker.register("sw.js").catch(()=>{}); });
+}
 </script>
 </body>
 </html>
