@@ -235,8 +235,23 @@ footer .save-state.err{color:var(--red); font-weight:700}
   .btn-add{width:100%}
 }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 </head>
 <body>
+
+<div class="overlay on" id="authGate" style="z-index:150">
+  <div class="modal" style="max-width:380px; text-align:center">
+    <div class="logo" style="margin:0 auto 14px">R$</div>
+    <h3>Entrar no seu Controle Financeiro</h3>
+    <p style="color:var(--muted); font-size:13.5px; margin:8px 0 18px">Digite seu e-mail e enviamos um link de acesso. Sem senha pra decorar — e seus dados ficam salvos na sua conta, não só neste aparelho.</p>
+    <div class="mf" style="text-align:left">
+      <label>E-mail</label>
+      <input id="authEmail" type="email" placeholder="voce@email.com" autocomplete="email">
+    </div>
+    <button class="btn btn-gold" id="authSend" style="width:100%; margin-top:14px; padding:13px">Enviar link de acesso</button>
+    <div id="authMsg" style="margin-top:12px; font-size:13px; color:var(--sage)"></div>
+  </div>
+</div>
 
 <header>
   <div class="wrap hd">
@@ -251,6 +266,7 @@ footer .save-state.err{color:var(--red); font-weight:700}
         <button id="nextM" title="Próximo mês">›</button>
       </div>
       <button class="btn btn-gold" id="btnFechar">✓ Fechar mês</button>
+      <button class="icbtn" id="btnLogout" title="Sair da conta" style="border:1px solid var(--line2)">⏻</button>
     </div>
   </div>
 </header>
@@ -465,6 +481,73 @@ function askConfirm(title,body,onOk){
 }
 function closeConfirm(){ document.getElementById("confirmOverlay").classList.remove("on"); _confirmCb=null; }
 
+/* ---------- Supabase: conta + sync na nuvem ---------- */
+const SUPABASE_URL="https://vhbzqqjyggguugpxxnca.supabase.co";
+const SUPABASE_ANON_KEY="sb_publishable_Bm8Bib0TtzMBoPz3TxCnDw_gyN5Xt-l";
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+let _sbUserId=null,_syncTimer=null;
+
+function showAuthGate(){ document.getElementById("authGate").classList.add("on"); }
+function hideAuthGate(){ document.getElementById("authGate").classList.remove("on"); }
+
+function syncRemote(){
+  if(!_sbUserId) return;
+  clearTimeout(_syncTimer);
+  _syncTimer=setTimeout(async ()=>{
+    try{
+      const {error}=await sb.from("estado_usuario").upsert({user_id:_sbUserId,dados:S,atualizado_em:new Date().toISOString()});
+      if(error) throw error;
+    }catch(e){
+      const st=document.getElementById("saveState");
+      if(st){ st.classList.add("err"); st.textContent="⚠️ Salvo neste aparelho, mas não sincronizou com a nuvem ainda."; }
+    }
+  },1200);
+}
+
+async function loadRemoteOrMigrate(userId){
+  _sbUserId=userId;
+  try{
+    const {data,error}=await sb.from("estado_usuario").select("dados").eq("user_id",userId).maybeSingle();
+    if(error) throw error;
+    if(data && data.dados && Object.keys(data.dados).length){
+      S=data.dados;
+    }else{
+      await sb.from("estado_usuario").upsert({user_id:userId,dados:S,atualizado_em:new Date().toISOString()});
+    }
+  }catch(e){
+    toast("Não deu pra buscar seus dados na nuvem agora — usando o que está salvo neste aparelho.",{type:"err",duration:5000});
+  }
+  render();
+}
+
+document.getElementById("authSend").onclick=async ()=>{
+  const email=document.getElementById("authEmail").value.trim();
+  const msg=document.getElementById("authMsg");
+  if(!email || !email.includes("@")){ msg.style.color="var(--red)"; msg.textContent="Digite um e-mail válido."; return; }
+  msg.style.color="var(--sage)"; msg.textContent="Enviando...";
+  try{
+    const {error}=await sb.auth.signInWithOtp({email,options:{emailRedirectTo:window.location.origin+window.location.pathname}});
+    if(error) throw error;
+    msg.textContent="Link enviado! Confira seu e-mail (e o spam) e clique nele pra entrar.";
+  }catch(e){
+    msg.style.color="var(--red)"; msg.textContent="Não deu pra enviar agora. Tenta de novo em instantes.";
+  }
+};
+document.getElementById("btnLogout").onclick=()=>{
+  askConfirm("Sair da conta","Seus dados continuam salvos na nuvem. Ao sair, este aparelho volta a pedir login.",async ()=>{
+    await sb.auth.signOut(); _sbUserId=null; showAuthGate();
+  });
+};
+
+sb.auth.onAuthStateChange((event,session)=>{
+  if(session){ hideAuthGate(); loadRemoteOrMigrate(session.user.id); }
+  else{ showAuthGate(); }
+});
+sb.auth.getSession().then(({data})=>{
+  if(data.session){ hideAuthGate(); loadRemoteOrMigrate(data.session.user.id); }
+  else{ showAuthGate(); }
+});
+
 let S=load(), formTipo="saida", formCat="", filtro="todos";
 
 function seed(){
@@ -490,11 +573,12 @@ function save(){
   const st=document.getElementById("saveState");
   try{
     localStorage.setItem(KEY,JSON.stringify(S));
-    if(st){ st.classList.remove("err"); st.textContent="Salvo neste aparelho às "+new Date().toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"}); }
+    if(st){ st.classList.remove("err"); st.textContent=(_sbUserId?"Salvo neste aparelho e sincronizando com a nuvem — ":"Salvo neste aparelho às ")+new Date().toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"}); }
   }catch(e){
     if(st){ st.classList.add("err"); st.textContent="⚠️ Não foi possível salvar (armazenamento cheio ou bloqueado). Faça um backup agora."; }
     toast("Não foi possível salvar seus dados neste aparelho.",{type:"err",duration:6000});
   }
+  syncRemote();
 }
 function curMonth(){ if(!S.meses[S.mesAtual]) S.meses[S.mesAtual]={lancamentos:[],cardLimite:0}; return S.meses[S.mesAtual]; }
 function totals(m){ let entr=0,said=0,cartao=0;
@@ -749,7 +833,6 @@ document.getElementById("confirmOk").onclick=()=>{ const cb=_confirmCb; closeCon
 document.getElementById("confirmOverlay").addEventListener("click",e=>{if(e.target.id==="confirmOverlay")closeConfirm();});
 
 setTipo("saida");
-render();
 </script>
 </body>
 </html>
