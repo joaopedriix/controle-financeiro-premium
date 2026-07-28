@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0b1712">
 <title>Controle Financeiro Premium</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1f16'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%23FFC942' font-family='Arial' font-weight='bold'%3ER%3C/text%3E%3C/svg%3E">
@@ -34,7 +34,7 @@ header{background:linear-gradient(135deg,#12351f,#081410); border-bottom:1px sol
 .brand span{display:block; font-size:11px; color:var(--sage); font-weight:700; letter-spacing:2px}
 .hd-right{display:flex; align-items:center; gap:9px; flex-wrap:wrap}
 .month-nav{display:flex; align-items:center; gap:2px; background:rgba(255,255,255,.06); border:1px solid var(--line); border-radius:12px; padding:3px}
-.month-nav button{font-size:20px; width:32px; height:32px; border-radius:9px; color:var(--sage)}
+.month-nav button{font-size:20px; width:44px; height:44px; border-radius:9px; color:var(--sage)}
 .month-nav button:hover{background:rgba(255,255,255,.08)}
 .month-nav .cur{min-width:120px; text-align:center; font-weight:700; font-size:14px; text-transform:capitalize}
 .btn{border-radius:12px; padding:10px 15px; font-weight:700; font-size:14px; transition:.15s; white-space:nowrap}
@@ -141,9 +141,10 @@ input:focus,select:focus{outline:none; border-color:var(--green2)!important; box
 .item .vmain{font-weight:800; font-size:16px; font-variant-numeric:tabular-nums}
 .item.entrada .vmain{color:var(--green)} .item.saida .vmain{color:var(--red)}
 .item .acts{display:flex; gap:4px}
-.icbtn{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:var(--muted);font-size:16px}
+.icbtn{width:44px;height:44px;border-radius:9px;display:grid;place-items:center;color:var(--muted);font-size:16px}
 .icbtn:hover{background:var(--raise); color:var(--text)}
-.ok-badge{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;cursor:pointer;font-size:16px;border:1.5px solid var(--line2)}
+.icbtn:focus-visible,.ok-badge:focus-visible,.month-nav button:focus-visible{outline:2px solid var(--sage); outline-offset:2px}
+.ok-badge{width:44px;height:44px;border-radius:9px;display:grid;place-items:center;cursor:pointer;font-size:16px;border:1.5px solid var(--line2)}
 .ok-badge.on{background:var(--green2); color:#062012; border-color:var(--green2)}
 
 .overlay{position:fixed; inset:0; background:rgba(4,10,7,.7); display:none; align-items:center; justify-content:center; padding:18px; z-index:60}
@@ -196,7 +197,28 @@ input:focus,select:focus{outline:none; border-color:var(--green2)!important; box
 .banner{background:rgba(255,201,66,.08); border:1px solid rgba(255,201,66,.3); border-radius:14px; padding:11px 15px; display:flex; align-items:center; gap:12px; font-size:13px; color:var(--gold); margin-top:14px}
 .banner button{margin-left:auto; font-size:12.5px; font-weight:700; color:var(--red); padding:6px 10px; border-radius:8px}
 .banner button:hover{background:rgba(255,107,82,.12)}
-footer{text-align:center; color:var(--dim); font-size:12px; padding:24px 0}
+footer{text-align:center; color:var(--muted); font-size:12px; padding:24px 0}
+footer .save-state{margin-top:4px; font-size:11.5px}
+footer .save-state.err{color:var(--red); font-weight:700}
+
+/* item marcado como exemplo */
+.item.is-example{border-style:dashed; opacity:.82}
+.item .tag.ex{background:rgba(255,255,255,.08); color:var(--muted)}
+
+/* erro inline em campo */
+.field-err{color:var(--red); font-size:12px; font-weight:600; margin-top:5px; display:none}
+.field-err.on{display:block}
+.money.err input,.txtfield.err input{border-color:var(--red)!important; box-shadow:0 0 0 3px rgba(255,107,82,.15)}
+
+/* toasts */
+#toastWrap{position:fixed; left:50%; bottom:88px; transform:translateX(-50%); z-index:200; display:flex; flex-direction:column; gap:8px; width:min(94vw,420px); pointer-events:none}
+.toast{pointer-events:auto; background:#132318; border:1px solid var(--line2); border-radius:14px; padding:12px 14px; display:flex; align-items:center; gap:10px; box-shadow:0 14px 34px rgba(0,0,0,.4); font-size:13.5px; font-weight:600; animation:toastIn .2s ease}
+.toast.ok{border-color:rgba(61,220,127,.4)}
+.toast.err{border-color:rgba(255,107,82,.5); color:var(--red)}
+.toast button{margin-left:auto; font-weight:800; color:var(--gold); padding:4px 8px; border-radius:8px; white-space:nowrap}
+.toast button:hover{background:rgba(255,255,255,.08)}
+@keyframes toastIn{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
+@media(max-width:520px){ #toastWrap{bottom:96px} }
 
 @media(max-width:860px){
   .kpis{grid-template-columns:1fr 1fr}
@@ -249,7 +271,8 @@ footer{text-align:center; color:var(--dim); font-size:12px; padding:24px 0}
       <div class="hero-fields">
         <div class="bigfield">
           <label>Valor</label>
-          <div class="money"><span class="cur">R$</span><input id="fVal" type="number" min="0" step="1" inputmode="decimal" placeholder="0,00"></div>
+          <div class="money" id="fValWrap"><span class="cur">R$</span><input id="fVal" type="number" min="0" step="1" inputmode="decimal" placeholder="0,00"></div>
+          <div class="field-err" id="fValErr">Informe um valor maior que zero.</div>
         </div>
         <div class="bigfield txtfield">
           <label>Descrição</label>
@@ -351,7 +374,10 @@ footer{text-align:center; color:var(--dim); font-size:12px; padding:24px 0}
   </div>
 </div>
 
-<footer>Controle Financeiro Premium · seus dados ficam salvos neste aparelho/navegador</footer>
+<footer>Controle Financeiro Premium · seus dados ficam salvos neste aparelho/navegador
+  <div class="save-state" id="saveState">—</div>
+</footer>
+<div id="toastWrap" aria-live="polite"></div>
 
 <div class="overlay" id="edOverlay">
   <div class="modal">
@@ -371,6 +397,17 @@ footer{text-align:center; color:var(--dim); font-size:12px; padding:24px 0}
   </div>
 </div>
 <datalist id="catList"></datalist>
+
+<div class="overlay" id="confirmOverlay">
+  <div class="modal">
+    <h3 id="confirmTitle">Confirmar</h3>
+    <p id="confirmBody" style="color:var(--text);font-size:14px"></p>
+    <div class="modal-actions">
+      <button class="btn-ghost" id="confirmCancel">Cancelar</button>
+      <button class="btn-danger" id="confirmOk">Confirmar</button>
+    </div>
+  </div>
+</div>
 
 <div class="overlay" id="fmOverlay">
   <div class="modal">
@@ -399,6 +436,35 @@ const prevYM=ym=>{let[y,m]=ym.split("-").map(Number); m--; if(m<1){m=12;y--;} re
 const labelYM=ym=>{let[y,m]=ym.split("-").map(Number); return MESES[m-1]+" "+y;};
 const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
 
+/* ---------- toasts ---------- */
+function toast(msg,opts){
+  opts=opts||{};
+  const wrap=document.getElementById("toastWrap");
+  const el=document.createElement("div");
+  el.className="toast "+(opts.type||"");
+  el.innerHTML=`<span>${esc(msg)}</span>`;
+  if(opts.actionLabel){
+    const b=document.createElement("button");
+    b.type="button"; b.textContent=opts.actionLabel;
+    b.onclick=()=>{ if(opts.onAction) opts.onAction(); el.remove(); };
+    el.appendChild(b);
+  }
+  wrap.appendChild(el);
+  const life=opts.duration||4200;
+  const timer=setTimeout(()=>el.remove(),life);
+  if(opts.actionLabel) el.addEventListener("click",e=>{ if(e.target.tagName!=="BUTTON") return; clearTimeout(timer); });
+}
+
+/* ---------- modal de confirmação genérico (substitui confirm() nativo) ---------- */
+let _confirmCb=null;
+function askConfirm(title,body,onOk){
+  document.getElementById("confirmTitle").textContent=title;
+  document.getElementById("confirmBody").textContent=body;
+  _confirmCb=onOk;
+  document.getElementById("confirmOverlay").classList.add("on");
+}
+function closeConfirm(){ document.getElementById("confirmOverlay").classList.remove("on"); _confirmCb=null; }
+
 let S=load(), formTipo="saida", formCat="", filtro="todos";
 
 function seed(){
@@ -420,7 +486,16 @@ function exampleMonth(){ return {lancamentos:[
   {id:uid(),tipo:"saida",desc:"Plano celular",cat:"Telefone",plan:66,pago:66,fixo:true,ok:true},
 ], cardLimite:2000}; }
 function load(){ try{const r=localStorage.getItem(KEY); if(r) return JSON.parse(r);}catch(e){} return seed(); }
-function save(){ try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} }
+function save(){
+  const st=document.getElementById("saveState");
+  try{
+    localStorage.setItem(KEY,JSON.stringify(S));
+    if(st){ st.classList.remove("err"); st.textContent="Salvo neste aparelho às "+new Date().toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"}); }
+  }catch(e){
+    if(st){ st.classList.add("err"); st.textContent="⚠️ Não foi possível salvar (armazenamento cheio ou bloqueado). Faça um backup agora."; }
+    toast("Não foi possível salvar seus dados neste aparelho.",{type:"err",duration:6000});
+  }
+}
 function curMonth(){ if(!S.meses[S.mesAtual]) S.meses[S.mesAtual]={lancamentos:[],cardLimite:0}; return S.meses[S.mesAtual]; }
 function totals(m){ let entr=0,said=0,cartao=0;
   m.lancamentos.forEach(l=>{ if(l.tipo==="entrada") entr+=(+l.pago||0);
@@ -522,7 +597,7 @@ function renderList(m){
   if(!arr.length){ box.innerHTML=`<div class="empty">Nenhum lançamento aqui. Registre acima ⬆️</div>`; return; }
   box.innerHTML=arr.map(l=>{
     const ic=CAT_ICON[l.cat]||(l.tipo==="entrada"?"↗":"↘");
-    return `<div class="item ${l.tipo}" data-id="${l.id}"><div class="ic">${ic}</div><div class="info"><div class="d1"><span class="desc">${esc(l.desc)}</span><span class="tag">${esc(l.cat||"Outros")}</span>${l.fixo?'<span class="tag fix">↻ fixo</span>':''}</div><div class="d2">${l.tipo==="entrada"?"Entrada":"Saída"}${(+l.plan&&+l.plan!==+l.pago)?" · planejado "+fmt(l.plan):""}</div></div><div class="vals"><div class="vmain">${l.tipo==="entrada"?"+":"−"} ${fmt(l.pago)}</div></div><div class="acts"><button class="ok-badge ${l.ok?'on':''}" data-ok="${l.id}" title="Pago/recebido">✓</button><button class="icbtn" data-edit="${l.id}" title="Editar">✏️</button></div></div>`;
+    return `<div class="item ${l.tipo} ${S.exemplo?'is-example':''}" data-id="${l.id}"><div class="ic">${ic}</div><div class="info"><div class="d1"><span class="desc">${esc(l.desc)}</span><span class="tag">${esc(l.cat||"Outros")}</span>${l.fixo?'<span class="tag fix">↻ fixo</span>':''}${S.exemplo?'<span class="tag ex">exemplo</span>':''}</div><div class="d2">${l.tipo==="entrada"?"Entrada":"Saída"}${(+l.plan&&+l.plan!==+l.pago)?" · planejado "+fmt(l.plan):""}</div></div><div class="vals"><div class="vmain">${l.tipo==="entrada"?"+":"−"} ${fmt(l.pago)}</div></div><div class="acts"><button class="ok-badge ${l.ok?'on':''}" data-ok="${l.id}" title="Pago/recebido">✓</button><button class="icbtn" data-edit="${l.id}" title="Editar">✏️</button></div></div>`;
   }).join("");
 }
 
@@ -552,19 +627,26 @@ function setTipo(t){ formTipo=t; formCat="";
   renderChips();
 }
 function addLanc(){
-  const val=+document.getElementById("fVal").value||0;
+  const valEl=document.getElementById("fVal"), val=+valEl.value||0;
   const desc=document.getElementById("fDesc").value.trim();
   let cat=formCat;
   if(cat==="__custom"||(cat&&![...CAT_OUT,...CAT_IN].some(x=>x[0]===cat))) cat=document.getElementById("fCatCustom").value.trim();
   if(!cat) cat="Outros";
   const fixo=document.getElementById("fFixo").checked;
-  if(!val && !desc){ document.getElementById("fVal").focus(); return; }
+  const valWrap=document.getElementById("fValWrap"), valErr=document.getElementById("fValErr");
+  if(val<=0){
+    valWrap.classList.add("err"); valErr.classList.add("on");
+    valEl.focus();
+    return;
+  }
+  valWrap.classList.remove("err"); valErr.classList.remove("on");
   curMonth().lancamentos.unshift({id:uid(),tipo:formTipo,desc:desc||cat,cat,plan:val,pago:val,fixo,ok:true});
   S.exemplo=false;
-  document.getElementById("fVal").value=""; document.getElementById("fDesc").value="";
+  valEl.value=""; document.getElementById("fDesc").value="";
   document.getElementById("fCatCustom").value=""; document.getElementById("fFixo").checked=false;
   formCat=""; render();
-  document.getElementById("fVal").focus();
+  toast((formTipo==="saida"?"Saída":"Entrada")+" adicionada",{type:"ok",duration:2200});
+  valEl.focus();
 }
 
 let editId=null;
@@ -586,8 +668,11 @@ function closeEdit(){ document.getElementById("edOverlay").classList.remove("on"
 
 function openFechar(){ const m=curMonth(),t=totals(m),fx=m.lancamentos.filter(l=>l.fixo).length;
   document.getElementById("fmBody").innerHTML=`Vou arquivar <b>${labelYM(S.mesAtual)}</b> no Histórico:<br>Entradas ${fmt(t.entr)} · Saídas ${fmt(t.said)} · <b>Saldo ${fmt(t.saldo)}</b>.`;
-  document.getElementById("fmWarn").innerHTML=`Depois os lançamentos <b>zeram</b> e começa <b>${labelYM(nextYM(S.mesAtual))}</b>. `+(fx?`Seus <b>${fx} gasto(s) fixo(s)</b> já repetem no novo mês com o valor planejado.`:`Você não marcou fixos, então o próximo mês começa vazio.`);
+  document.getElementById("fmWarn").innerHTML=`Isso não pode ser desfeito. Depois os lançamentos <b>zeram</b> e começa <b>${labelYM(nextYM(S.mesAtual))}</b>. `+(fx?`Seus <b>${fx} gasto(s) fixo(s)</b> já repetem no novo mês com o valor planejado.`:`Você não marcou fixos, então o próximo mês começa vazio.`);
   document.getElementById("fmOverlay").classList.add("on");
+  const ok=document.getElementById("fmOk");
+  ok.disabled=true; ok.style.opacity=".5"; ok.style.cursor="not-allowed";
+  setTimeout(()=>{ ok.disabled=false; ok.style.opacity=""; ok.style.cursor=""; },900);
 }
 function fecharMes(){ const m=curMonth(),t=totals(m),byCat={};
   m.lancamentos.filter(l=>l.tipo==="saida").forEach(l=>byCat[l.cat||"Outros"]=(byCat[l.cat||"Outros"]||0)+(+l.pago||0));
@@ -597,6 +682,7 @@ function fecharMes(){ const m=curMonth(),t=totals(m),byCat={};
   const fixos=m.lancamentos.filter(l=>l.fixo).map(l=>({id:uid(),tipo:l.tipo,desc:l.desc,cat:l.cat,plan:(+l.plan||+l.pago||0),pago:0,fixo:true,ok:false}));
   S.meses[prox]={lancamentos:fixos,cardLimite:m.cardLimite||0}; S.mesAtual=prox; S.exemplo=false;
   document.getElementById("fmOverlay").classList.remove("on"); showTab("mes"); render();
+  toast("Mês arquivado no histórico",{type:"ok",duration:3200});
 }
 function showTab(w){ const mes=w==="mes";
   document.getElementById("viewMes").style.display=mes?"block":"none";
@@ -632,7 +718,17 @@ document.getElementById("lanc").addEventListener("click",e=>{
 });
 document.getElementById("edCancel").onclick=closeEdit;
 document.getElementById("edSave").onclick=saveEdit;
-document.getElementById("edDel").onclick=()=>{ curMonth().lancamentos=curMonth().lancamentos.filter(x=>x.id!==editId); closeEdit(); render(); };
+document.getElementById("edDel").onclick=()=>{
+  const ym=S.mesAtual, arr=curMonth().lancamentos, idx=arr.findIndex(x=>x.id===editId);
+  if(idx===-1){ closeEdit(); return; }
+  const [removed]=arr.splice(idx,1);
+  closeEdit(); render();
+  toast("Lançamento excluído",{actionLabel:"Desfazer",duration:6000,onAction:()=>{
+    const m=S.meses[ym]; if(!m) return;
+    m.lancamentos.splice(Math.min(idx,m.lancamentos.length),0,removed);
+    S.mesAtual===ym ? render() : save();
+  }});
+};
 document.getElementById("edOverlay").addEventListener("click",e=>{if(e.target.id==="edOverlay")closeEdit();});
 document.getElementById("btnMeta").onclick=()=>{ const nome=document.getElementById("mNome").value.trim(),alvo=+document.getElementById("mAlvo").value||0;
   if(!nome){document.getElementById("mNome").focus();return;} S.metas.push({id:uid(),nome,alvo,guardado:0});
@@ -643,8 +739,14 @@ document.getElementById("metasList").addEventListener("click",e=>{
   const inp=wrap.querySelector("[data-mv]"),v=+((inp&&inp.value)||0);
   if(add){g.guardado=(+g.guardado||0)+v;render();}
   else if(sub){g.guardado=Math.max(0,(+g.guardado||0)-v);render();}
-  else if(del){if(confirm('Excluir a meta "'+g.nome+'"?')){S.metas=S.metas.filter(x=>x.id!==g.id);render();}}
+  else if(del){ askConfirm("Excluir meta","Excluir a meta \""+g.nome+"\"? O valor já guardado nela não entra em nenhuma outra meta.",()=>{
+    S.metas=S.metas.filter(x=>x.id!==g.id); render();
+    toast("Meta excluída",{duration:2600});
+  }); }
 });
+document.getElementById("confirmCancel").onclick=closeConfirm;
+document.getElementById("confirmOk").onclick=()=>{ const cb=_confirmCb; closeConfirm(); if(cb) cb(); };
+document.getElementById("confirmOverlay").addEventListener("click",e=>{if(e.target.id==="confirmOverlay")closeConfirm();});
 
 setTipo("saida");
 render();
