@@ -242,6 +242,7 @@ footer .save-state.err{color:var(--red); font-weight:700}
 }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="calc.js"></script>
 </head>
 <body>
 
@@ -445,18 +446,13 @@ footer .save-state.err{color:var(--red); font-weight:700}
 </div>
 <script>
 "use strict";
+const {MESES,nextYM,prevYM,labelYM,fmt,fmtK,totals}=window.CFPCalc;
 const KEY="cfp_app_v2";
-const MESES=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
 const CAT_OUT=[["Mercado","🛒"],["Alimentação","🍽️"],["Moradia/Aluguel","🏠"],["Transporte","🚗"],["Energia","💡"],["Água","🚿"],["Internet","🌐"],["Telefone","📱"],["Cartão de crédito","💳"],["Saúde","➕"],["Educação","📚"],["Lazer","🎉"],["Assinaturas","🔁"],["Pets","🐾"],["Outros","📦"]];
 const CAT_IN=[["Salário","💼"],["Freelas/Extra","💪"],["Vendas","🏷️"],["Rendimentos","📈"],["Outros","📦"]];
 const CAT_COLORS=["#3DDC7F","#43A047","#2EA968","#7FCf9a","#FFC942","#F2A007","#FF6B52","#E0573B","#66BB6A","#C9A227","#5B8C3E","#9CCC65","#26A69A","#EF9A5A"];
 const CAT_ICON=Object.fromEntries([...CAT_OUT,...CAT_IN]);
-const fmt=v=>new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"}).format(v||0);
-const fmtK=v=>{v=v||0; if(Math.abs(v)>=1000) return "R$ "+(v/1000).toFixed(v%1000?1:0).replace(".",",")+"k"; return fmt(v);};
 const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
-const nextYM=ym=>{let[y,m]=ym.split("-").map(Number); m++; if(m>12){m=1;y++;} return y+"-"+String(m).padStart(2,"0");};
-const prevYM=ym=>{let[y,m]=ym.split("-").map(Number); m--; if(m<1){m=12;y--;} return y+"-"+String(m).padStart(2,"0");};
-const labelYM=ym=>{let[y,m]=ym.split("-").map(Number); return MESES[m-1]+" "+y;};
 const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
 
 /* ---------- toasts ---------- */
@@ -588,10 +584,6 @@ function save(){
   syncRemote();
 }
 function curMonth(){ if(!S.meses[S.mesAtual]) S.meses[S.mesAtual]={lancamentos:[],cardLimite:0}; return S.meses[S.mesAtual]; }
-function totals(m){ let entr=0,said=0,cartao=0;
-  m.lancamentos.forEach(l=>{ if(l.tipo==="entrada") entr+=(+l.pago||0);
-    else{ said+=(+l.pago||0); if((l.cat||"").toLowerCase().includes("cart")) cartao+=(+l.pago||0);} });
-  return {entr,said,cartao,saldo:entr-said}; }
 
 function render(){
   document.getElementById("curMonth").textContent=labelYM(S.mesAtual);
@@ -845,5 +837,6 @@ if("serviceWorker" in navigator){
   window.addEventListener("load",()=>{ navigator.serviceWorker.register("sw.js").catch(()=>{}); });
 }
 </script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
