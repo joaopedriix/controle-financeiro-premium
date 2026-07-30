@@ -998,8 +998,9 @@
       const sep = url.includes('?') ? '&' : '?';
       url += sep + 'name=' + encodeURIComponent(name) + '&phonenumber=' + encodeURIComponent(onlyDigits(whatsapp));
 
-      const win = window.open(url, '_blank', 'noopener');
-      if (!win) window.location.href = url;  // fallback se o popup for bloqueado
+      const win = window.open(url, '_blank');
+      if (win) { win.opener = null; }  // mesma proteção do "noopener", sem quebrar a detecção de bloqueio
+      else window.location.href = url;  // fallback se o popup for bloqueado
       closeModal();
     });
   })();
