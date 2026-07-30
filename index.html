@@ -60,12 +60,15 @@
   "mainEntity": [
     { "@type": "Question", "name": "Funciona no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A planilha roda no app gratuito do Google Sheets no Android e no iPhone. Você lança um gasto na hora, em qualquer lugar." } },
     { "@type": "Question", "name": "Preciso instalar algo?", "acceptedAnswer": { "@type": "Answer", "text": "Não. Funciona 100% no Google Sheets, que é gratuito. Basta fazer uma cópia para a sua conta e começar a usar." } },
+    { "@type": "Question", "name": "Preciso ter o Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Não. A planilha foi feita para o Google Planilhas (Google Sheets), que é gratuito. Você não precisa comprar nem instalar o Excel." } },
+    { "@type": "Question", "name": "Posso editar a planilha do jeito que eu quiser?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Depois de fazer sua cópia, ela é 100% sua: você pode ajustar categorias, cores e o que mais quiser, no seu ritmo." } },
     { "@type": "Question", "name": "Recebo atualizações?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Sempre que a planilha for melhorada, você recebe a nova versão sem custo adicional." } },
-    { "@type": "Question", "name": "É vitalício?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Você paga uma única vez e o acesso é vitalício, sem mensalidade." } },
+    { "@type": "Question", "name": "Quanto tempo tenho acesso? É vitalício?", "acceptedAnswer": { "@type": "Answer", "text": "Você paga uma única vez e o acesso é vitalício, sem mensalidade. O Google Sheets também é gratuito — o seu controle financeiro fica com você para sempre." } },
     { "@type": "Question", "name": "Posso usar em mais de um dispositivo?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Como fica na sua conta Google, você acessa do computador, do celular e do tablet, tudo sincronizado." } },
     { "@type": "Question", "name": "É fácil para iniciantes?", "acceptedAnswer": { "@type": "Answer", "text": "Muito. Você só preenche as células azuis (salário, gastos, metas). Todo o cálculo é automático, e ainda vem um guia passo a passo." } },
     { "@type": "Question", "name": "Como recebo?", "acceptedAnswer": { "@type": "Answer", "text": "O acesso é imediato após a confirmação do pagamento na Hotmart. Você recebe o link para fazer sua própria cópia no Google Sheets." } },
-    { "@type": "Question", "name": "Tem suporte?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Em caso de dúvidas, você conta com suporte por e-mail para ajudar você a usar a planilha." } }
+    { "@type": "Question", "name": "Tem suporte?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Em caso de dúvidas, você conta com suporte por e-mail para ajudar você a usar a planilha." } },
+    { "@type": "Question", "name": "Existe garantia? E se eu não gostar?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Você tem 7 dias de garantia. Se não for pra você, pede reembolso pela Hotmart e recebe 100% do valor de volta." } }
   ]
 }
 </script>
@@ -200,7 +203,7 @@
     </div>
     <a href="#oferta" data-open-checkout
        class="cta-press hidden sm:inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-bold text-sm px-5 py-2.5 shadow-soft transition">
-       Quero a planilha
+       Quero organizar minhas finanças
     </a>
   </nav>
 </header>
@@ -218,18 +221,18 @@
         ✅ Funciona 100% no Google Sheets — sem instalar nada
       </span>
       <h1 class="text-4xl md:text-5xl lg:text-[3.3rem] font-extrabold leading-[1.08] text-slate-900">
-        Tenha controle total do seu dinheiro e pare de se perguntar
-        <span class="text-brand">para onde ele foi.</span>
+        Seu salário cai, some rápido e no fim do mês
+        <span class="text-brand">você nem sabe pra onde ele foi?</span>
       </h1>
       <p class="mt-5 text-lg text-slate-600 max-w-xl">
-        Organize suas finanças em <strong>poucos minutos por dia</strong>, acompanhe seus gastos
-        automaticamente e comece a <strong>economizar sem complicação</strong>. Você só preenche —
-        a planilha calcula, mostra em gráficos e avisa quando o cartão vai apertar.
+        Você não precisa ganhar mais. Precisa <strong>enxergar melhor</strong>. Em poucos minutos
+        por dia, você passa a saber exatamente onde cada real está indo, para de se sentir no
+        escuro com o próprio dinheiro — e começa a sobrar no fim do mês, sem cortar o que gosta.
       </p>
 
       <!-- selos de confiança -->
       <div class="mt-6 flex flex-wrap gap-2.5">
-        <span class="trust-chip">✅ Mais de 15 recursos automáticos</span>
+        <span class="trust-chip">✅ Sem fórmula e sem complicação</span>
         <span class="trust-chip">✅ Funciona no celular e no computador</span>
         <span class="trust-chip">✅ Acesso imediato</span>
       </div>
@@ -237,7 +240,7 @@
       <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <a href="#oferta" data-open-checkout
            class="pulse-cta cta-press inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-8 py-4 shadow-card transition">
-           Quero ter controle do meu dinheiro →
+           Quero parar de perder dinheiro →
         </a>
         <div class="text-sm">
           <div class="font-bold text-slate-900">R$ 47,90 <span class="text-slate-400 line-through font-normal">R$ 97,00</span></div>
@@ -340,11 +343,13 @@
   <div class="max-w-5xl mx-auto px-4 text-center reveal">
     <span class="text-sm font-bold uppercase tracking-wider text-alert">Soa familiar?</span>
     <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">
-      O dinheiro entra… e some antes do fim do mês.
+      Você sente que ganha bem, mas nunca sobra nada?
     </h2>
     <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-      Quando não há controle, todo mês vira o mesmo filme: a sensação de que ganha bem,
-      mas nunca sobra. O problema quase nunca é o quanto você ganha — é a <strong>falta de clareza</strong>.
+      Fecha o mês e não entende como isso aconteceu de novo. Vem aquela <strong>culpa</strong> de
+      não ter conseguido guardar nada, a <strong>ansiedade</strong> de abrir a fatura e a
+      <strong>frustração</strong> de sentir que o dinheiro simplesmente evapora. Respira — o
+      problema quase nunca é o quanto você ganha, é a <strong>falta de clareza</strong> sobre pra onde ele vai.
     </p>
   </div>
 
@@ -352,24 +357,24 @@
     <div class="reveal rounded-2xl border border-mint bg-cream p-6">
       <div class="text-3xl mb-3">😰</div>
       <h3 class="font-bold text-lg text-slate-900">"Para onde foi meu dinheiro?"</h3>
-      <p class="mt-2 text-slate-600 text-sm">Você chega no fim do mês sem saber em que gastou. Sem registro, não dá pra cortar o que não importa.</p>
+      <p class="mt-2 text-slate-600 text-sm">Você chega no fim do mês sem saber em que gastou — e fica aquela sensação incômoda de estar perdendo dinheiro sem nem perceber.</p>
     </div>
     <div class="reveal rounded-2xl border border-mint bg-cream p-6">
       <div class="text-3xl mb-3">💳</div>
       <h3 class="font-bold text-lg text-slate-900">A fatura sempre assusta</h3>
-      <p class="mt-2 text-slate-600 text-sm">Compras no crédito que você esqueceu acumulam e estouram o orçamento do mês seguinte.</p>
+      <p class="mt-2 text-slate-600 text-sm">Aquele aperto no peito ao abrir o app do banco. Compras no crédito que você esqueceu voltam pra te assombrar no mês seguinte.</p>
     </div>
     <div class="reveal rounded-2xl border border-mint bg-cream p-6">
       <div class="text-3xl mb-3">🎯</div>
       <h3 class="font-bold text-lg text-slate-900">Metas que nunca saem do papel</h3>
-      <p class="mt-2 text-slate-600 text-sm">Reserva de emergência, viagem, sair das dívidas… sem um plano visível, fica só na intenção.</p>
+      <p class="mt-2 text-slate-600 text-sm">Reserva de emergência, viagem, sair das dívidas — a vontade existe, mas sem um plano visível vira só mais uma culpa acumulada.</p>
     </div>
   </div>
 
   <div class="max-w-3xl mx-auto px-4 mt-12 text-center reveal">
     <div class="inline-block rounded-2xl bg-brand text-white px-8 py-6 shadow-card">
       <p class="text-lg md:text-xl font-semibold">
-        Imagine abrir uma planilha e, em 30 segundos, ver exatamente
+        Imagine abrir uma planilha e sentir aquele alívio de saber, em 30 segundos, exatamente
         <span class="text-gold">quanto você tem livre para gastar hoje.</span>
       </p>
     </div>
@@ -380,9 +385,9 @@
 <section id="beneficios" class="py-20 bg-cream">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center reveal">
-      <span class="text-sm font-bold uppercase tracking-wider text-brand">Por que ela funciona</span>
-      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Clareza no lugar de planilha complicada</h2>
-      <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Pensada para quem não entende de finanças. Você só preenche — ela faz as contas.</p>
+      <span class="text-sm font-bold uppercase tracking-wider text-brand">A solução</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Pare de adivinhar. Comece a saber.</h2>
+      <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Você não precisa entender de finanças, fórmulas ou planilhas. Você só preenche — ela cuida do resto.</p>
     </div>
 
     <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -390,7 +395,7 @@
       <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint">
         <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">📊</div>
         <h3 class="font-bold text-lg text-slate-900">Veja em segundos para onde seu dinheiro está indo</h3>
-        <p class="mt-2 text-sm text-slate-600">Sem abrir dezenas de abas: um único painel mostra quanto entrou, quanto saiu e quanto sobra — atualizado sozinho.</p>
+        <p class="mt-2 text-sm text-slate-600">Sem abrir dezenas de abas ou fazer conta de cabeça: você enxerga na hora quanto entrou, quanto saiu e quanto sobra — sempre atualizado.</p>
       </div>
       <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint">
         <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">🚨</div>
@@ -400,7 +405,7 @@
       <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint">
         <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">⚡</div>
         <h3 class="font-bold text-lg text-slate-900">Chega de fazer conta na mão todo mês</h3>
-        <p class="mt-2 text-sm text-slate-600">Você só preenche as células azuis. Saldo, totais e gráficos se calculam sozinhos — sem fórmula, sem esforço.</p>
+        <p class="mt-2 text-sm text-slate-600">Você só preenche as células azuis. O resto — saldo, totais e evolução — se calcula sozinho, sem fórmula e sem esforço.</p>
       </div>
       <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint">
         <div class="h-12 w-12 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl mb-4">🎯</div>
@@ -425,17 +430,17 @@
 <section id="recursos" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center reveal">
-      <span class="text-sm font-bold uppercase tracking-wider text-brand">Por dentro da planilha</span>
-      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Veja o que ela faz por você</h2>
+      <span class="text-sm font-bold uppercase tracking-wider text-brand">Veja com seus próprios olhos</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">O resultado que você vai sentir todo mês</h2>
     </div>
 
     <!-- Recurso 1 -->
     <div class="mt-14 grid lg:grid-cols-2 gap-10 items-center">
       <div class="reveal order-2 lg:order-1">
         <span class="text-xs font-bold uppercase tracking-wider text-grass">Visão do mês</span>
-        <h3 class="mt-2 text-2xl font-extrabold text-slate-900">Seu saldo livre em um gráfico</h3>
-        <p class="mt-3 text-slate-600">A rosca de <strong>Saldo Livre</strong> mostra quanto sobra depois de pagar tudo.
-          Conforme você marca os gastos como pagos, ela diminui em tempo real. Bateu o olho, entendeu a sua situação.</p>
+        <h3 class="mt-2 text-2xl font-extrabold text-slate-900">Quanto sobra pra você gastar, sem fazer conta</h3>
+        <p class="mt-3 text-slate-600">Assim que você marca os gastos como pagos, o <strong>Saldo Livre</strong> mostra na hora
+          quanto ainda dá pra gastar sem se apertar. Bateu o olho, entendeu a sua situação.</p>
         <ul class="mt-4 space-y-2 text-sm text-slate-700">
           <li class="flex gap-2"><span class="text-leaf">✔</span> Entradas, saídas e reservas no topo</li>
           <li class="flex gap-2"><span class="text-leaf">✔</span> Comparação com o mês anterior</li>
@@ -487,9 +492,9 @@
       </div>
       <div class="reveal">
         <span class="text-xs font-bold uppercase tracking-wider text-grass">Gastos sob controle</span>
-        <h3 class="mt-2 text-2xl font-extrabold text-slate-900">Planejado x Realizado, lado a lado</h3>
+        <h3 class="mt-2 text-2xl font-extrabold text-slate-900">Descubra onde está gastando mais do que devia</h3>
         <p class="mt-3 text-slate-600">Defina quanto pretende gastar em cada categoria e compare com o que gastou de verdade.
-          A planilha mostra na hora se você ficou <strong>abaixo</strong> ou <strong>acima</strong> do combinado.</p>
+          Você sabe na hora se ficou <strong>abaixo</strong> ou <strong>acima</strong> do combinado — antes que vire problema.</p>
         <ul class="mt-4 space-y-2 text-sm text-slate-700">
           <li class="flex gap-2"><span class="text-leaf">✔</span> Despesas variáveis e gastos fixos separados</li>
           <li class="flex gap-2"><span class="text-leaf">✔</span> Marcação de "essencial" que se repete sozinha</li>
@@ -502,8 +507,8 @@
     <div class="mt-16 grid lg:grid-cols-2 gap-10 items-center">
       <div class="reveal order-2 lg:order-1">
         <span class="text-xs font-bold uppercase tracking-wider text-grass">Visão do ano</span>
-        <h3 class="mt-2 text-2xl font-extrabold text-slate-900">Dashboard anual que se preenche sozinho</h3>
-        <p class="mt-3 text-slate-600">Cada mês que você usa alimenta o painel anual. No fim do ano você enxerga
+        <h3 class="mt-2 text-2xl font-extrabold text-slate-900">Sua evolução financeira, ano a ano, sem esforço</h3>
+        <p class="mt-3 text-slate-600">Cada mês que você usa alimenta essa visão do ano inteiro. No fim do ano você enxerga
           a evolução das suas finanças — e prova pra você mesmo que mudou de vida.</p>
         <ul class="mt-4 space-y-2 text-sm text-slate-700">
           <li class="flex gap-2"><span class="text-leaf">✔</span> Saldo acumulado mês a mês</li>
@@ -587,21 +592,21 @@
           </div>
 
           <p class="mt-6 text-slate-600">
-            Eu sou o criador por trás do perfil <strong>@juau.fcb</strong> e da <strong>Planilhas e Planners</strong>,
-            um projeto criado para ajudar você a organizar melhor a rotina, os planos e as metas — de forma
-            simples, prática e visual.
+            Antes de criar essa planilha, eu também vivia no escuro com o meu próprio dinheiro.
+            Ganhava, gastava, e no fim do mês nunca sobrava — e o pior: eu nem sabia exatamente por quê.
           </p>
           <p class="mt-3 text-slate-600">
-            Acredito que a organização não precisa ser complicada. Com as ferramentas certas, é possível
-            transformar tarefas em planos, ideias em objetivos e objetivos em resultados mais claros.
+            Foi tentando resolver isso pra mim mesmo que comecei a montar as primeiras versões dessa
+            planilha, ainda bem simples, só pra eu enxergar pra onde o meu dinheiro estava indo de verdade.
           </p>
           <p class="mt-3 text-slate-600">
-            Foi com esse propósito que nasceu o perfil @planilhaseplanners: para compartilhar planilhas,
-            planners e soluções que tornam o dia a dia mais produtivo e organizado.
+            Deu tão certo que virou o <strong>@juau.fcb</strong> e depois a <strong>Planilhas e Planners</strong> —
+            hoje uso o que aprendi organizando minha própria vida financeira pra ajudar quem, assim como eu,
+            está cansado de sentir que o dinheiro simplesmente escapa.
           </p>
           <p class="mt-3 text-slate-600">
-            Seja bem-vindo(a)! Espero que você encontre aqui as ferramentas necessárias para deixar sua
-            rotina mais leve, planejada e sob controle.
+            Se você chegou até aqui, é porque também quer essa clareza. E eu fico muito feliz em poder
+            te ajudar a chegar lá.
           </p>
 
           <nav aria-label="Perfis do Instagram" class="mt-6 flex flex-col gap-3 border-t border-mint pt-5">
@@ -620,7 +625,7 @@
           <div class="mt-6">
             <a href="https://www.instagram.com/planilhaseplanners/" target="_blank" rel="noopener noreferrer"
                class="cta-press inline-flex items-center justify-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold px-7 py-3.5 shadow-card transition">
-               Acompanhar no Instagram →
+               Vem me seguir no Instagram →
             </a>
           </div>
         </article>
@@ -641,6 +646,75 @@
       <div class="rounded-xl bg-white/10 p-5"><div class="text-2xl mb-2">📖</div>Guia de uso passo a passo</div>
     </div>
   </div>
+</section>
+
+<!-- ===================== BÔNUS EXCLUSIVOS ===================== -->
+<section class="py-20 bg-cream">
+  <div class="max-w-5xl mx-auto px-4 text-center reveal">
+    <span class="text-sm font-bold uppercase tracking-wider text-brand">Só por tempo limitado</span>
+    <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Hoje você não leva só uma planilha</h2>
+    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Você recebe um sistema completo de organização financeira — com estes bônus inclusos, sem custo extra:</p>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint flex gap-4">
+      <div class="h-12 w-12 shrink-0 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl">📘</div>
+      <div>
+        <div class="flex items-center gap-2 flex-wrap">
+          <h3 class="font-bold text-slate-900">Planner Financeiro Digital</h3>
+          <span class="text-[11px] font-extrabold text-white bg-gold px-3 py-1 rounded-full">BÔNUS 1</span>
+        </div>
+        <p class="mt-1 text-sm text-slate-600">Organize metas e sonhos além dos números — da viagem à reserva de emergência.</p>
+        <p class="mt-2 text-xs text-slate-400"><span class="line-through">R$ 27,00</span> <span class="text-brand font-bold">GRÁTIS hoje</span></p>
+      </div>
+    </div>
+    <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint flex gap-4">
+      <div class="h-12 w-12 shrink-0 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl">✅</div>
+      <div>
+        <div class="flex items-center gap-2 flex-wrap">
+          <h3 class="font-bold text-slate-900">Checklist Financeiro Mensal</h3>
+          <span class="text-[11px] font-extrabold text-white bg-gold px-3 py-1 rounded-full">BÔNUS 2</span>
+        </div>
+        <p class="mt-1 text-sm text-slate-600">O passo a passo pra fechar as contas todo mês sem esquecer nada.</p>
+        <p class="mt-2 text-xs text-slate-400"><span class="line-through">R$ 19,00</span> <span class="text-brand font-bold">GRÁTIS hoje</span></p>
+      </div>
+    </div>
+    <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint flex gap-4">
+      <div class="h-12 w-12 shrink-0 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl">📖</div>
+      <div>
+        <div class="flex items-center gap-2 flex-wrap">
+          <h3 class="font-bold text-slate-900">Guia de Organização Financeira</h3>
+          <span class="text-[11px] font-extrabold text-white bg-gold px-3 py-1 rounded-full">BÔNUS 3</span>
+        </div>
+        <p class="mt-1 text-sm text-slate-600">Do zero à clareza total sobre o seu dinheiro, em poucas páginas.</p>
+        <p class="mt-2 text-xs text-slate-400"><span class="line-through">R$ 37,00</span> <span class="text-brand font-bold">GRÁTIS hoje</span></p>
+      </div>
+    </div>
+    <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint flex gap-4">
+      <div class="h-12 w-12 shrink-0 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl">🎥</div>
+      <div>
+        <div class="flex items-center gap-2 flex-wrap">
+          <h3 class="font-bold text-slate-900">Mini Aula de Configuração</h3>
+          <span class="text-[11px] font-extrabold text-white bg-gold px-3 py-1 rounded-full">BÔNUS 4</span>
+        </div>
+        <p class="mt-1 text-sm text-slate-600">Veja, passo a passo, como deixar a sua planilha pronta e rodando em minutos.</p>
+        <p class="mt-2 text-xs text-slate-400"><span class="line-through">R$ 47,00</span> <span class="text-brand font-bold">GRÁTIS hoje</span></p>
+      </div>
+    </div>
+    <div class="reveal lift bg-white rounded-2xl p-6 shadow-soft border border-mint flex gap-4">
+      <div class="h-12 w-12 shrink-0 rounded-xl bg-mint text-brand flex items-center justify-center text-2xl">💡</div>
+      <div>
+        <div class="flex items-center gap-2 flex-wrap">
+          <h3 class="font-bold text-slate-900">Guia para Economizar Mais</h3>
+          <span class="text-[11px] font-extrabold text-white bg-gold px-3 py-1 rounded-full">BÔNUS 5</span>
+        </div>
+        <p class="mt-1 text-sm text-slate-600">Táticas simples e realistas pra sobrar mais dinheiro todo mês, sem vida de monge.</p>
+        <p class="mt-2 text-xs text-slate-400"><span class="line-through">R$ 29,00</span> <span class="text-brand font-bold">GRÁTIS hoje</span></p>
+      </div>
+    </div>
+  </div>
+
+  <p class="max-w-5xl mx-auto px-4 mt-6 text-xs text-slate-500 text-center">Materiais digitais, liberados junto com o acesso à planilha.</p>
 </section>
 
 <!-- ===================== REFORÇO DE VALOR ===================== -->
@@ -685,24 +759,35 @@
   <div class="max-w-3xl mx-auto px-4">
     <div class="text-center reveal mb-10">
       <span class="text-sm font-bold uppercase tracking-wider text-brand">Oferta de lançamento</span>
-      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Comece a organizar seu dinheiro hoje</h2>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Assuma o controle do seu dinheiro hoje</h2>
     </div>
 
     <div class="reveal rounded-3xl bg-white border border-mint shadow-card overflow-hidden">
       <div class="bg-forest text-white text-center py-4 font-bold">
-        📊 Controle Financeiro Premium — Planilha completa
+        📊 Controle Financeiro Premium — Sistema completo
       </div>
       <div class="p-8">
         <ul class="space-y-3 text-slate-700">
-          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> 12 abas mensais + Dashboard anual automático</li>
-          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Gráficos de saldo livre, planejado x real e evolução</li>
-          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Controle de metas, reservas e alerta de crédito</li>
-          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Guia de uso passo a passo incluso</li>
+          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Planilha completa: 12 abas mensais + evolução anual automática</li>
+          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Saldo livre, planejado x real e alerta de crédito</li>
+          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Controle de metas e reservas</li>
+          <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> + 5 bônus exclusivos (veja acima)</li>
           <li class="flex gap-3"><span class="text-leaf font-bold">✔</span> Acesso imediato e vitalício no Google Sheets</li>
         </ul>
 
+        <!-- stack de valor -->
+        <div class="mt-8 space-y-2">
+          <div class="value-row"><span class="text-slate-700 font-semibold">Planilha Controle Financeiro Premium</span><span class="value-price text-slate-500">R$ 97,00</span></div>
+          <div class="value-row"><span class="text-slate-700 font-semibold">📘 Planner Financeiro Digital</span><span class="value-price text-slate-500">R$ 27,00</span></div>
+          <div class="value-row"><span class="text-slate-700 font-semibold">✅ Checklist Financeiro Mensal</span><span class="value-price text-slate-500">R$ 19,00</span></div>
+          <div class="value-row"><span class="text-slate-700 font-semibold">📖 Guia de Organização Financeira</span><span class="value-price text-slate-500">R$ 37,00</span></div>
+          <div class="value-row"><span class="text-slate-700 font-semibold">🎥 Mini Aula de Configuração</span><span class="value-price text-slate-500">R$ 47,00</span></div>
+          <div class="value-row"><span class="text-slate-700 font-semibold">💡 Guia para Economizar Mais</span><span class="value-price text-slate-500">R$ 29,00</span></div>
+          <div class="value-row highlight"><span class="font-extrabold">Valor total hoje</span><span class="value-price">R$ 256,00</span></div>
+        </div>
+
         <div class="mt-8 text-center">
-          <div class="text-slate-400 line-through">de R$ 97,00</div>
+          <div class="text-slate-400 line-through">de R$ 256,00</div>
           <div class="text-5xl font-extrabold text-brand">R$ 47,90</div>
           <div class="text-sm text-slate-500">à vista ou em até 4x na Hotmart</div>
         </div>
@@ -715,7 +800,7 @@
         <!-- Checkout da planilha na Hotmart -->
         <a href="https://pay.hotmart.com/J105830027G" target="_blank" rel="noopener" data-checkout="planilha" data-open-checkout
            class="pulse-cta cta-press mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-8 py-5 shadow-card transition">
-           Quero organizar minha vida financeira →
+           Quero assumir o controle do meu dinheiro →
         </a>
 
         <div class="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs text-slate-500">
@@ -765,6 +850,36 @@
   </div>
 </section>
 
+<!-- ===================== PROVA SOCIAL ===================== -->
+<section class="py-16 bg-cream">
+  <div class="max-w-3xl mx-auto px-4 text-center reveal">
+    <span class="text-sm font-bold uppercase tracking-wider text-brand">Por que confiar</span>
+    <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Feito por quem também precisou disso</h2>
+    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Em vez de prints genéricos, aqui está o que você já pode conferir agora mesmo:</p>
+  </div>
+  <div class="max-w-5xl mx-auto px-4 mt-10 grid md:grid-cols-3 gap-5">
+    <div class="reveal rounded-2xl bg-white border border-mint p-6 text-center">
+      <div class="text-3xl mb-2">🎥</div>
+      <h3 class="font-bold text-slate-900">Vídeo real da planilha</h3>
+      <p class="mt-1 text-sm text-slate-600">Sem prints editados: veja a planilha funcionando de verdade, gravada na tela do próprio criador.</p>
+    </div>
+    <div class="reveal rounded-2xl bg-white border border-mint p-6 text-center">
+      <div class="text-3xl mb-2">🛡️</div>
+      <h3 class="font-bold text-slate-900">7 dias de garantia incondicional</h3>
+      <p class="mt-1 text-sm text-slate-600">Se não gostar, é reembolso total pela Hotmart, sem perguntas. O risco fica com a gente.</p>
+    </div>
+    <div class="reveal rounded-2xl bg-white border border-mint p-6 text-center">
+      <div class="text-3xl mb-2">🙋</div>
+      <h3 class="font-bold text-slate-900">Criador acessível, sem esconderijo</h3>
+      <p class="mt-1 text-sm text-slate-600">Dúvida antes ou depois da compra? Fala direto comigo no Instagram
+        <a href="https://www.instagram.com/planilhaseplanners/" target="_blank" rel="noopener noreferrer" class="text-brand font-semibold hover:text-brand transition">@planilhaseplanners</a>.</p>
+    </div>
+  </div>
+  <!-- Espaço reservado para prova social com clientes reais: assim que tiver as primeiras avaliações,
+       adicione aqui cards com nome, foto (com autorização) e print do depoimento/nota. Não usar
+       depoimentos ou avaliações fictícias — isso pode configurar propaganda enganosa. -->
+</section>
+
 <!-- ===================== FAQ ===================== -->
 <section class="py-20 bg-cream">
   <div class="max-w-3xl mx-auto px-4">
@@ -788,15 +903,27 @@
       </details>
       <details class="fade-up group rounded-xl border border-mint bg-white p-5">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          Preciso ter o Excel? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">Não. A planilha foi feita para o Google Planilhas (Google Sheets), que é gratuito. Você não precisa comprar nem instalar o Excel.</p>
+      </details>
+      <details class="fade-up group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
+          Posso editar a planilha do jeito que eu quiser? <span class="text-brand group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600 text-sm">Sim. Depois de fazer sua cópia, ela é 100% sua: você pode ajustar categorias, cores e o que mais quiser, no seu ritmo.</p>
+      </details>
+      <details class="fade-up group rounded-xl border border-mint bg-white p-5">
+        <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
           Recebo atualizações? <span class="text-brand group-open:rotate-45 transition">+</span>
         </summary>
         <p class="mt-3 text-slate-600 text-sm">Sim. Sempre que a planilha for melhorada, você recebe a nova versão sem custo adicional.</p>
       </details>
       <details class="fade-up group rounded-xl border border-mint bg-white p-5">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
-          É vitalício? <span class="text-brand group-open:rotate-45 transition">+</span>
+          Quanto tempo tenho acesso? É vitalício? <span class="text-brand group-open:rotate-45 transition">+</span>
         </summary>
-        <p class="mt-3 text-slate-600 text-sm">Sim. Você paga uma única vez e o acesso é vitalício, sem mensalidade. O Google Sheets também é gratuito.</p>
+        <p class="mt-3 text-slate-600 text-sm">Você paga uma única vez e o acesso é vitalício, sem mensalidade. O Google Sheets também é gratuito — o seu controle financeiro fica com você para sempre.</p>
       </details>
       <details class="fade-up group rounded-xl border border-mint bg-white p-5">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
@@ -824,7 +951,7 @@
       </details>
       <details class="fade-up group rounded-xl border border-mint bg-white p-5">
         <summary class="flex cursor-pointer items-center justify-between font-bold text-slate-900">
-          E se eu não gostar? <span class="text-brand group-open:rotate-45 transition">+</span>
+          Existe garantia? E se eu não gostar? <span class="text-brand group-open:rotate-45 transition">+</span>
         </summary>
         <p class="mt-3 text-slate-600 text-sm">Você tem 7 dias de garantia. Se não for pra você, pede reembolso pela Hotmart e recebe 100% de volta.</p>
       </details>
@@ -839,7 +966,7 @@
     <p class="mt-4 text-lg text-white/80">Em poucos minutos você instala a clareza que faltava nas suas finanças. Por menos do que um delivery.</p>
     <a href="#oferta" data-open-checkout
        class="cta-press mt-8 inline-flex items-center gap-2 rounded-full bg-gold hover:brightness-95 text-forest font-extrabold text-lg px-10 py-5 shadow-card transition">
-       Quero ter controle do meu dinheiro por R$ 47,90 →
+       Quero começar a organizar minha vida financeira →
     </a>
     <div class="mt-5 text-sm text-white/70">🔒 Compra 100% segura · 🛡️ 7 dias de garantia · ⚡ Acesso imediato</div>
   </div>
@@ -865,7 +992,7 @@
 <!-- ===================== BOTÃO FLUTUANTE (MOBILE) ===================== -->
 <a href="#oferta" data-open-checkout
    class="md:hidden fixed bottom-4 inset-x-4 z-50 inline-flex items-center justify-center gap-2 rounded-full bg-leaf text-white font-extrabold py-4 shadow-card">
-   Quero minha planilha · R$ 47,90 →
+   Quero parar de perder dinheiro · R$ 47,90 →
 </a>
 
 <!-- ===================== MODAL DE CHECKOUT EM 2 ETAPAS ===================== -->
