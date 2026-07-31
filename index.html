@@ -220,21 +220,24 @@
       <span class="inline-flex items-center gap-2 rounded-full bg-mint text-forest text-xs font-bold px-4 py-1.5 mb-5">
         ✅ Funciona 100% no Google Sheets — sem instalar nada
       </span>
-      <h1 class="text-4xl md:text-5xl lg:text-[3.3rem] font-extrabold leading-[1.08] text-slate-900">
+      <h1 id="heroHeadline" class="text-4xl md:text-5xl lg:text-[3.3rem] font-extrabold leading-[1.08] text-slate-900">
         Seu salário cai, some rápido e no fim do mês
         <span class="text-brand">você nem sabe pra onde ele foi?</span>
       </h1>
-      <p class="mt-5 text-lg text-slate-600 max-w-xl">
+      <p id="heroSub" class="mt-5 text-lg text-slate-600 max-w-xl">
         Você não precisa ganhar mais. Precisa <strong>enxergar melhor</strong>. Em poucos minutos
-        por dia, você passa a saber exatamente onde cada real está indo, para de se sentir no
-        escuro com o próprio dinheiro — e começa a sobrar no fim do mês, sem cortar o que gosta.
+        por dia você organiza salário, gastos e metas — e passa a sobrar dinheiro no fim do mês,
+        sem cortar o que gosta.
       </p>
 
-      <!-- selos de confiança -->
+      <!-- bloco de confiança consolidado -->
       <div class="mt-6 flex flex-wrap gap-2.5">
-        <span class="trust-chip">✅ Sem fórmula e sem complicação</span>
-        <span class="trust-chip">✅ Funciona no celular e no computador</span>
+        <span class="trust-chip">✅ Funciona 100% no Google Sheets</span>
+        <span class="trust-chip">✅ Sem mensalidade, pagamento único</span>
         <span class="trust-chip">✅ Acesso imediato</span>
+        <span class="trust-chip">✅ Funciona no celular e no computador</span>
+        <span class="trust-chip">🛡️ Garantia de 7 dias</span>
+        <span class="trust-chip">🔒 Compra 100% segura</span>
       </div>
 
       <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -246,12 +249,6 @@
           <div class="font-bold text-slate-900">R$ 47,90 <span class="text-slate-400 line-through font-normal">R$ 97,00</span></div>
           <div class="text-slate-500">ou em 4x na Hotmart</div>
         </div>
-      </div>
-
-      <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500">
-        <span class="flex items-center gap-1">🔒 Compra 100% segura</span>
-        <span class="flex items-center gap-1">⚡ Acesso imediato</span>
-        <span class="flex items-center gap-1">🛡️ Garantia de 7 dias</span>
       </div>
     </div>
 
@@ -338,6 +335,32 @@
   </div>
 </section>
 
+<!-- ===================== TESTE A/B DO HERO ===================== -->
+<!-- Variante A (padrão, escrita no HTML acima) é o que Google indexa — o
+     canonical sempre aponta pra URL sem query, então isso não afeta SEO.
+     Pra testar a Variante B, acesse a página com ?v=b na URL. Script
+     síncrono (sem defer/async) logo após o hero: roda antes do primeiro
+     paint do restante da página, então não há flash de conteúdo (FOUC).
+     Pra adicionar mais variantes no futuro, só criar novas chaves em
+     HERO_VARIANTS (ex.: "c") e acessar com ?v=c. -->
+<script>
+  (function(){
+    var HERO_VARIANTS = {
+      b: {
+        headline: 'Você trabalha o mês inteiro <span class="text-brand">e o dinheiro nunca sobra?</span>',
+        sub: 'A <strong>Controle Financeiro Premium</strong> mostra, em poucos minutos por dia, pra onde vai cada real que você ganha — pra você fechar o mês com dinheiro <strong>sobrando</strong>, não só contas pagas.'
+      }
+    };
+    var variant = new URLSearchParams(window.location.search).get('v');
+    if (variant && HERO_VARIANTS[variant]) {
+      var headlineEl = document.getElementById('heroHeadline');
+      var subEl = document.getElementById('heroSub');
+      if (headlineEl) headlineEl.innerHTML = HERO_VARIANTS[variant].headline;
+      if (subEl) subEl.innerHTML = HERO_VARIANTS[variant].sub;
+    }
+  })();
+</script>
+
 <!-- ===================== DOR DO PÚBLICO ===================== -->
 <section class="py-20 bg-white">
   <div class="max-w-5xl mx-auto px-4 text-center reveal">
@@ -345,11 +368,14 @@
     <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">
       Você sente que ganha bem, mas nunca sobra nada?
     </h2>
+    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Fecha o mês e não entende como isso aconteceu de novo:</p>
+    <ul class="mt-3 flex flex-wrap justify-center gap-x-6 gap-y-1 text-slate-600 font-medium max-w-2xl mx-auto">
+      <li>😔 A <strong>culpa</strong> de não ter guardado nada</li>
+      <li>😰 A <strong>ansiedade</strong> de abrir a fatura</li>
+      <li>😤 A <strong>frustração</strong> de ver o dinheiro evaporar</li>
+    </ul>
     <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-      Fecha o mês e não entende como isso aconteceu de novo. Vem aquela <strong>culpa</strong> de
-      não ter conseguido guardar nada, a <strong>ansiedade</strong> de abrir a fatura e a
-      <strong>frustração</strong> de sentir que o dinheiro simplesmente evapora. Respira — o
-      problema quase nunca é o quanto você ganha, é a <strong>falta de clareza</strong> sobre pra onde ele vai.
+      Respira — o problema quase nunca é o quanto você ganha, é a <strong>falta de clareza</strong> sobre pra onde ele vai.
     </p>
   </div>
 
@@ -612,21 +638,13 @@
           </div>
 
           <p class="mt-6 text-slate-600">
-            Antes de criar essa planilha, eu também vivia no escuro com o meu próprio dinheiro.
-            Ganhava, gastava, e no fim do mês nunca sobrava — e o pior: eu nem sabia exatamente por quê.
+            Antes de criar essa planilha, eu também vivia no escuro com o meu próprio dinheiro — ganhava,
+            gastava, e no fim do mês nunca sobrava, sem saber exatamente por quê. Foi tentando resolver isso
+            pra mim mesmo que comecei a montar as primeiras versões dela.
           </p>
           <p class="mt-3 text-slate-600">
-            Foi tentando resolver isso pra mim mesmo que comecei a montar as primeiras versões dessa
-            planilha, ainda bem simples, só pra eu enxergar pra onde o meu dinheiro estava indo de verdade.
-          </p>
-          <p class="mt-3 text-slate-600">
-            Deu tão certo que virou o <strong>@juau.fcb</strong> e depois a <strong>Planilhas e Planners</strong> —
-            hoje uso o que aprendi organizando minha própria vida financeira pra ajudar quem, assim como eu,
-            está cansado de sentir que o dinheiro simplesmente escapa.
-          </p>
-          <p class="mt-3 text-slate-600">
-            Se você chegou até aqui, é porque também quer essa clareza. E eu fico muito feliz em poder
-            te ajudar a chegar lá.
+            Deu tão certo que virou o <strong>@juau.fcb</strong> e depois a <strong>Planilhas e Planners</strong>.
+            Se você chegou até aqui, é porque também quer essa clareza — e eu fico muito feliz em poder te ajudar a chegar lá.
           </p>
 
           <nav aria-label="Perfis do Instagram" class="mt-6 flex flex-col gap-3 border-t border-mint pt-5">
@@ -642,6 +660,10 @@
             </div>
           </nav>
 
+          <p class="mt-5 pt-5 border-t border-mint text-sm text-slate-600">
+            🙋 <strong>Dúvida antes ou depois da compra?</strong> Fala direto comigo no Instagram, sem esconderijo.
+          </p>
+
           <div class="mt-6">
             <a href="https://www.instagram.com/planilhaseplanners/" target="_blank" rel="noopener noreferrer"
                class="cta-press inline-flex items-center justify-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold px-7 py-3.5 shadow-card transition">
@@ -651,6 +673,16 @@
         </article>
       </div>
 
+    </div>
+
+    <!-- Espaço reservado para prova social com clientes reais: assim que tiver as primeiras avaliações,
+         adicione aqui cards com nome, foto (com autorização) e print do depoimento/nota. Não usar
+         depoimentos ou avaliações fictícias — isso pode configurar propaganda enganosa. -->
+    <div class="mt-12 text-center">
+      <a href="#oferta" data-open-checkout
+         class="cta-press inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-8 py-4 shadow-card transition">
+         Quero confiar e começar agora →
+      </a>
     </div>
   </div>
 </section>
@@ -892,42 +924,6 @@
         </a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===================== PROVA SOCIAL ===================== -->
-<section class="py-16 bg-cream">
-  <div class="max-w-3xl mx-auto px-4 text-center reveal">
-    <span class="text-sm font-bold uppercase tracking-wider text-brand">Por que confiar</span>
-    <h2 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">Feito por quem também precisou disso</h2>
-    <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">Em vez de prints genéricos, aqui está o que você já pode conferir agora mesmo:</p>
-  </div>
-  <div class="max-w-5xl mx-auto px-4 mt-10 grid md:grid-cols-3 gap-5">
-    <div class="reveal rounded-2xl bg-white border border-mint p-6 text-center">
-      <div class="text-3xl mb-2">🎥</div>
-      <h3 class="font-bold text-slate-900">Vídeo real da planilha</h3>
-      <p class="mt-1 text-sm text-slate-600">Sem prints editados: veja a planilha funcionando de verdade, gravada na tela do próprio criador.</p>
-    </div>
-    <div class="reveal rounded-2xl bg-white border border-mint p-6 text-center">
-      <div class="text-3xl mb-2">🛡️</div>
-      <h3 class="font-bold text-slate-900">7 dias de garantia incondicional</h3>
-      <p class="mt-1 text-sm text-slate-600">Se não gostar, é reembolso total pela Hotmart, sem perguntas. O risco fica com a gente.</p>
-    </div>
-    <div class="reveal rounded-2xl bg-white border border-mint p-6 text-center">
-      <div class="text-3xl mb-2">🙋</div>
-      <h3 class="font-bold text-slate-900">Criador acessível, sem esconderijo</h3>
-      <p class="mt-1 text-sm text-slate-600">Dúvida antes ou depois da compra? Fala direto comigo no Instagram
-        <a href="https://www.instagram.com/planilhaseplanners/" target="_blank" rel="noopener noreferrer" class="text-brand font-semibold hover:text-brand transition">@planilhaseplanners</a>.</p>
-    </div>
-  </div>
-  <!-- Espaço reservado para prova social com clientes reais: assim que tiver as primeiras avaliações,
-       adicione aqui cards com nome, foto (com autorização) e print do depoimento/nota. Não usar
-       depoimentos ou avaliações fictícias — isso pode configurar propaganda enganosa. -->
-  <div class="mt-10 text-center">
-    <a href="#oferta" data-open-checkout
-       class="cta-press inline-flex items-center gap-2 rounded-full bg-leaf hover:bg-brand text-white font-extrabold text-lg px-8 py-4 shadow-card transition">
-       Quero confiar e começar agora →
-    </a>
   </div>
 </section>
 
